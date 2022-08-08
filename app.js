@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require("mongoose");
 var user = require('./models/user');
-
+var authRouter= require('./routes/auth')
 let loginRoute=require("./routes/login")
 let hompageRoute=require("./routes/homepage")
 let alltaskRoute=require("./routes/alltask")
