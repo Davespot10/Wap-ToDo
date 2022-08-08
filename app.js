@@ -54,11 +54,11 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/item', itemRouter);
 app.use(loginRoute)
-app.use("/login",hompageRoute)
-app.use("/login",alltaskRoute)
-app.use("/login",complatedtaskRoute)
-app.use("/login",pendingtaskRoute)
-app.use("/login",delatedtaskRoute)
+app.use(hompageRoute)
+app.use(alltaskRoute)
+app.use(complatedtaskRoute)
+app.use(pendingtaskRoute)
+app.use(delatedtaskRoute)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

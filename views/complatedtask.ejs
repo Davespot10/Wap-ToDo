@@ -13,12 +13,12 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap');
 body{
-    background-image: url(../public/images/b5.jpeg);
+    background-image: url(../images/b5.jpeg);
 }
 
 
 #outer {
-    background-image: url(../public/images/b10.jpeg);
+    background-image: url(../images/b10.jpeg);
     border-radius: 4rem;
 
     margin: 3rem;
@@ -147,26 +147,35 @@ body{
 
 
         <div id="leftbar">
-            <h3 id="task">TASK</h3>
-
-
+            <a href="homepage">
+                <h3  id="task">TASK</h3>
+            </a>
+            <a href="alltask">
             <div id="todolist">
                 <i class="bi bi-list-task" style="font-size: 50px;"></i>
                 <p>TO DO Lists</p>
             </div>
+        </a>
+        <a href="pendingtask">
+
+       
             <div id="pending">
                 <i style="font-size: 50px;" class="bi bi-alarm-fill"></i>
                 <p>Task Pending</p>
             </div>
+        </a>
+        <a href="complatedtask">
             <div id="complated">
                 <i style="font-size: 50px;" class="bi bi-check2-circle"></i>
                 <p>Task Complated</p>
             </div>
-
+        </a>
+        <a href="delatedtask">
             <div id="delated">
                 <i style="font-size: 50px;" class="bi bi-trash3-fill"></i>
                 <p>Task Delated</p>
             </div>
+        </a>
             <div id="space">
 
             </div>
@@ -191,6 +200,8 @@ body{
             </form>
             <br>
             <br>
+            <h2 style="text-align: center;"> <i><b>Complated Tasks!!!</b></i>  </h2>
+
             <div id="middlebody">
                 <div id="sportstudy">
                     <div id="middlebody1">
