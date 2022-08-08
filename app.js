@@ -5,18 +5,24 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require("mongoose");
 var user = require('./models/user');
-var authRouter= require('./routes/auth')
 let loginRoute=require("./routes/login")
 let hompageRoute=require("./routes/homepage")
 let alltaskRoute=require("./routes/alltask")
 let complatedtaskRoute=require("./routes/complatedtask")
 let pendingtaskRoute=require("./routes/pendingtask")
 let delatedtaskRoute=require("./routes/delatedtask")
-let authRouter=require("./routes/auth")
+
+
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var itemRouter = require('./routes/item');
+
+
+
+
+
 
 var app = express();
 
@@ -40,44 +46,19 @@ app.use('/css', express.static('public/stylesheets'));
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use((req, res, next) => {
-  if (req.originalUrl !== "/login") {
-    if (req.cookies.key !== "key") {
-      res.redirect("/login");
-      console.log(req.url);
-      console.log("here");
-    } else {
-      next()
-    }
-  } else {
-    // do validation here
-    next();
-  }
-});
-
-
-app.use("/login", authRouter);
+app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/item', itemRouter);
 app.use(loginRoute)
-
 app.use(hompageRoute)
 app.use(alltaskRoute)
 app.use(complatedtaskRoute)
 app.use(pendingtaskRoute)
 app.use(delatedtaskRoute)
-
-app.use("/login",hompageRoute)
-app.use("/login",alltaskRoute)
-app.use("/login",complatedtaskRoute)
-app.use("/login",pendingtaskRoute)
-app.use("/login",delatedtaskRoute)
-app.use("/", indexRouter);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
