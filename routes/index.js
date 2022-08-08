@@ -3,7 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'MerDevTodo' });
+  res.render('login.ejs', { title: 'MerDevTodo' });
 });
 
 module.exports = router;
+
