@@ -9,14 +9,19 @@
     <style>
         body{
             background-image: url(../public/images/background\ 4.webp);
+    
         }
        
 
         #outer{
-            margin:2rem;
+            margin:12rem;
+            margin-left: 30rem;
             
             background-image: url(../public/images/b6.webp);
+            opacity:80%;
             border-radius: 10%;
+            width: 40%;
+            
         }
         input{
             background-color:rgba(255, 255, 255, 0.718);
@@ -25,12 +30,7 @@
             border-radius:1rem;
             height: 2rem;
         }
-        button{
-            border-radius: 1rem;
-            border-style:groove;
-            height: 30px;
-            width: 8rem;
-        }
+       
         #ep{
             width: 18rem;
             height: 2rem;
@@ -51,31 +51,32 @@
            padding-left: 2rem;
             padding-top: 1rem;
         }
+        #forgotpassword{
+            display:flex;
+            
+            
+            padding-left: 2rem;
+            padding-right: 1rem;
+        }
     </style>
 </head>
 <body id=>
     <div id="outer">
         <div id="creatAccount">
-            <p style="color: green;">START FOR FREE</p>
-            <h2 style="color: white;">Creat New Account</h2>
-            <label style="color: white;">Already a Member? &nbsp;</label><a style="text-decoration: none; color:rgb(72, 195, 27)" href="">login</a>
-            <br>
-            <br>
-            <input placeholder=" First Name" type="text" class="inputs" name="fname" id="">
-            <input placeholder=" Last Name" type="text" class="" name="lname" id="">
-            <br>
-            <br>
+            <p style="color: rgb(69, 188, 69);"><b>START FOR FREE</b> </p>
+            <h2 style="color: white;">Log In</h2>
+            <p style="color: white;">Your email</p>
+           
             <input placeholder=" Email" type="text" class="" name="lname" id="ep">
             <br>
-            <br>
-            <input placeholder=" Password" type="text" class="" name="lname" id="ep">
+        
+            <p style="color: white;">Your Password</p>
+            <input placeholder=" Password" type="password" class="" name="lname" id="ep">
             <br>
             <br>
             <div >
-                <button style="background-color: rgba(255, 255, 255, 0.123);color: white;" id="signin">Sign In </button>
-                <button style="background-color: rgba(0, 162, 255, 0.592);color: white;" id="creataccount">Creat Account</button>
+                <button  style="background-color:rgb(74, 173, 74);color: white;border-radius: 1rem; height: 2rem;width: 18rem;" id="creataccount">Sign In</button>
             </div>
-            
 
 
         </div>
@@ -83,15 +84,22 @@
             
             <br>
             <br>
+            <div id="forgotpassword" >
+                <a style="color: rgb(29, 164, 227);" href="./SignUp.ejs"> Creat an account</a>
+                <span> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</span>
+                <a style="color: rgb(29, 164, 227);" href="">Forgot Password</a>
+               </div>
             <div id="footer">
                    <div id="contact">
                     <label style="color: white;" >Phone Number: </label>
-                     <a style="text-decoration:none;color: white;"  href="tel:+251966678513">+251966678513</a>
+                     <a style="text-decoration:none;color: rgb(255, 255, 255);"  href="tel:+251966678513">+251966678513</a>
                     <br>
                     <label style="color: white;" for="">Email: </label>
                     
                      <a style="text-decoration:none;color: white;" href="davespot10@gmail.com">mppfinal@sridevi.com</a>
                    </div>
+                  
+
                 
                 
                
