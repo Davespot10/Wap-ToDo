@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require("mongoose");
 var user = require('./models/user');
+
 let loginRoute=require("./routes/login")
 let hompageRoute=require("./routes/homepage")
 let alltaskRoute=require("./routes/alltask")
@@ -12,17 +13,9 @@ let complatedtaskRoute=require("./routes/complatedtask")
 let pendingtaskRoute=require("./routes/pendingtask")
 let delatedtaskRoute=require("./routes/delatedtask")
 
-
-
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var itemRouter = require('./routes/item');
-
-
-
-
-
 
 var app = express();
 
