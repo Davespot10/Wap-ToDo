@@ -12,6 +12,7 @@ let alltaskRoute=require("./routes/alltask")
 let complatedtaskRoute=require("./routes/complatedtask")
 let pendingtaskRoute=require("./routes/pendingtask")
 let delatedtaskRoute=require("./routes/delatedtask")
+let authRouter=require("./routes/auth")
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -63,12 +64,20 @@ app.use("/login", authRouter);
 app.use('/users', usersRouter);
 app.use('/item', itemRouter);
 app.use(loginRoute)
+
+app.use(hompageRoute)
+app.use(alltaskRoute)
+app.use(complatedtaskRoute)
+app.use(pendingtaskRoute)
+app.use(delatedtaskRoute)
+
 app.use("/login",hompageRoute)
 app.use("/login",alltaskRoute)
 app.use("/login",complatedtaskRoute)
 app.use("/login",pendingtaskRoute)
 app.use("/login",delatedtaskRoute)
 app.use("/", indexRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
