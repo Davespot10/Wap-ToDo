@@ -3,12 +3,27 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require("mongoose");
+var user = require('./models/user');
+
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var itemRouter = require('./routes/item');
 
 var app = express();
+
+// connect to mongoDb
+const dbUri = `mongodb+srv://merdevtodo:mershdev@cluster0.zbmdck4.mongodb.net/todo-database?retryWrites=true&w=majority`;
+mongoose
+  .connect(dbUri)
+  .then(() => {
+    console.log("Connected to the database ");
+  })
+  .catch((err) => {
+    console.error(`Error connecting to the database. n${err}`);
+  });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
