@@ -9,7 +9,7 @@ router.get("/signup",(req,res)=>{
     res.render("signup.ejs");
 })
 router.post("/postlogin",(req,res)=>{
-    res.redirect("/homepage")
+    res.redirect("/login/homepage")
 })
 router.post("/postsignup",(req,res)=>{
     res.redirect("/login")

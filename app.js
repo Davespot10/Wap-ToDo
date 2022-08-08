@@ -7,6 +7,11 @@ const mongoose = require("mongoose");
 var user = require('./models/user');
 let loginRoute=require("./routes/login")
 let hompageRoute=require("./routes/homepage")
+let alltaskRoute=require("./routes/alltask")
+let complatedtaskRoute=require("./routes/complatedtask")
+let pendingtaskRoute=require("./routes/pendingtask")
+let delatedtaskRoute=require("./routes/delatedtask")
+
 
 
 
@@ -14,7 +19,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var itemRouter = require('./routes/item');
 
-app.use('/mycss', express.static(path.join(__dirname, 'public', 'css')));
+
+
 
 
 
@@ -35,6 +41,9 @@ mongoose
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use('/css', express.static('public/stylesheets'));
+
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -45,7 +54,11 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/item', itemRouter);
 app.use(loginRoute)
-app.use(hompageRoute)
+app.use("/login",hompageRoute)
+app.use("/login",alltaskRoute)
+app.use("/login",complatedtaskRoute)
+app.use("/login",pendingtaskRoute)
+app.use("/login",delatedtaskRoute)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
