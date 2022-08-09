@@ -1,21 +1,14 @@
 const express = require("express");
 const { default: mongoose } = require("mongoose");
+const app = require("../app");
 const router = express.Router();
 const Todo = require("../models/todo");
 
+
+
+
+
 router.get("/", function (req, res, next) {
-
-
-  // if(req.cookies.currentUser == undefined){
-  //   res.redirect('/login')
-  //   return
-  // }
-
-  // let userId = req.cookies.currentUser.split(',')[0]
-  Todo.find({userId:'merha'}).then(data =>{  if(req.cookies.currentUser == undefined){
-    res.redirect('/login')
-    return;
-  }
 
   let userId = req.cookies.currentUser.split(',')[0];
   Todo.find({userId:userId}).then(data =>{
@@ -25,15 +18,11 @@ router.get("/", function (req, res, next) {
     res.send(err);
   })
 });
-});
 
-
+ 
 router.post("/", (req, res) => {
   
-if(req.cookies.currentUser == undefined){
-  res.redirect('/login')
-  return;
-}
+
   let userId = req.cookies.currentUser.split(',')[0];
   Todo.find({ userId: userId }).then((data)=>{
     const doc = new Todo();
@@ -53,20 +42,10 @@ if(req.cookies.currentUser == undefined){
 });
 
 
-router.put('/update/status', (req, res) =>{
-  console.log(req.body.todoName);
-  Todo.updateOne({todoName:req.body.todoName,userId:req.cookies.currentUser.split(',')[0]},{status:req.body.status}).then((data)=>{
-    res.send(data)
-  }).catch((error)=>{
-    res.statusCode(500).send(error)
-  })
-  
-});
-
-
 
 router.put('/update/title',(req,res)=>{
-  let todoId = req.body.id;
+  
+  let title = req.body.title;
   let userId = req.cookies.currentUser.split(",")[0];
   Todo.updateOne({ _id: todoId, userId: userId },{title : req.body.title}).then((data)=>{
     res.send(data);
@@ -77,10 +56,11 @@ router.put('/update/title',(req,res)=>{
 
 
 router.put("/update/category", (req, res) => {
-  let todoId = req.body.id;
+  
+  let id = req.body.id;
   let userId = req.cookies.currentUser.split(",")[0];
   Todo.updateOne(
-    { _id: todoId, userId: userId },
+    { _id: id, userId: userId },
     { category: req.body.category }
   )
     .then((data) => {
@@ -92,10 +72,11 @@ router.put("/update/category", (req, res) => {
 });
 
 router.put("/update/description", (req, res) => {
-  let todoId = req.body.id;
+ 
+  let id = req.body.id;
   let userId = req.cookies.currentUser.split(",")[0];
   Todo.updateOne(
-    { _id: todoId, userId: userId },
+    { _id: id, userId: userId },
     { description: req.body.description }
   )
     .then((data) => {
@@ -118,7 +99,4 @@ router.delete("/:id", (req, res) => {
       res.send(err);
     });
 });
-
-
-
 module.exports = router;

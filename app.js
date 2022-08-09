@@ -67,12 +67,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(loginRoute);
+app.use((req, res, next) => {
+  if (req.cookies.currentUser == undefined) {
+    res.redirect("/login");
+    return;
+  }
+  next();
+
+})
 
 app.use('/', indexRouter);
 app.use('/todo',todoRouter);
 app.use('/users', usersRouter);
 app.use('/item', itemRouter);
-app.use(loginRoute)
+
 app.use(hompageRoute)
 app.use(alltaskRoute)
 app.use(complatedtaskRoute)

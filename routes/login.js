@@ -7,7 +7,8 @@ router.get("/login", function (req, res, next) {
   res.render("login.ejs");
 });
 router.get("/signup", (req, res) => {
-  res.render("signup.ejs");
+
+  res.redirect("users");
 });
 router.post("/postlogin", async (req, res) => {
   let data = await user.find();
