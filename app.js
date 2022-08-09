@@ -71,6 +71,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(loginRoute);
+
 app.use((req, res, next) => {
   if (req.cookies.currentUser == undefined) {
     res.redirect("/login");

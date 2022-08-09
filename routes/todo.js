@@ -6,30 +6,19 @@ const Todo = require("../models/todo");
 
 
 
-  // if(req.cookies.currentUser == undefined){
-  //   res.redirect('/login')
-  //   return
-  // }
-
-  // let userId = req.cookies.currentUser.split(',')[0]
-  Todo.find({userId:'merha'}).then(data =>{  if(req.cookies.currentUser == undefined){
-    res.redirect('/login')
-    return;
-  }
-
-  let userId = req.cookies.currentUser.split(',')[0];
-  Todo.find({userId:userId}).then(todo =>{
-  Todo.find().then(todo =>{
-    // res.render('alltask.ejs', { title: 'ALL Tasks', todo });
-    res.send(data);
-  }).catch((err)=>{
-    res.send(err);
-  })
+router.get("/", function (req, res) {
+  let user = req.cookies.currentUser.split(',')[0];
+  
+  Todo.find({userId : user})
+    .then((todo) => {
+      res.send(todo);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
 });
 
- 
 router.post("/", (req, res) => {
-  
 
   let userId = req.cookies.currentUser.split(',')[0];
   Todo.find({ userId: userId }).then((data)=>{
@@ -49,7 +38,18 @@ router.post("/", (req, res) => {
   });
 });
 
-
+router.put("/status", (req, res) => {
+  Todo.updateOne(
+    { title: req.body.title, userId: req.cookies.currentUser.split(",")[0] },
+    { status: req.body.status }
+  )
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((error) => {
+      res.statusCode(500).send(error);
+    });
+});
 
 router.put('/update/title',(req,res)=>{
   
