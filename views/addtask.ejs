@@ -93,11 +93,10 @@ body{
 
 #middlebody {
     height: 80%;
-    
-    width: 100%;
-    justify-content: space-between;
-    background-image: url(../images/addtask\ b.webp);
-
+    border: 1px solid;
+    width: 120%;
+    text-align: center;
+   
 
 }
 
@@ -108,26 +107,29 @@ body{
 }
 
 #username {
-    margin-top: 15px;
-    margin-right: 30px;
-    margin-left: -40px;
-    font-size: small;
+    margin-right: 50px;
 
 }
 
-/* #middlebody1 {
-    display: flex;
-    height: 49%;
-    border: 1px solid;
-    width: 100%;
-    flex-wrap: wrap;
 
-} */
 
 
 
 #sportstudy,#shoopingtravel {
     width: 50%;
+
+}
+#addform{
+    width: 25%;
+    height: 4%;
+    border-radius: 3rem;
+}
+#submitbutton{
+    width: 25%;
+    height: 4%;
+    border-radius: 3rem;
+    margin-top: 2rem;
+
 
 }
 #logout{
@@ -141,10 +143,14 @@ body{
     background-color: blue;
     color: white;
 }
-#addtask{
-    margin-left: 50rem;
-    
+#username {
+    margin-top: 15px;
+    margin-right: 30px;
+    margin-left: -40px;
+    font-size: small;
+
 }
+
 
 
        
@@ -167,17 +173,17 @@ body{
             <a href="homepage">
             <h3  id="task">TASK</h3>
         </a>
-        
+    
         <a href="addtask">
             <div id="todolist">
                 <i class="bi bi-file-earmark-plus-fill" style="font-size: 50px;"></i>
-                <p>All Tasks</p>
+                <p>Add New Task</p>
             </div>
         </a>
             <a href="alltask">
             <div id="todolist">
                 <i class="bi bi-list-task" style="font-size: 50px;"></i>
-                <p>TO DO Lists</p>
+                <p>All Tasks</p>
             </div>
         </a>
         <a href="pendingtask">
@@ -199,7 +205,7 @@ body{
                 <i style="font-size: 50px;" class="bi bi-trash3-fill"></i>
                 <p>Task Delated</p>
             </div>
-        </a>
+        </a >
             <div id="space">
 
             </div>
@@ -224,50 +230,29 @@ body{
             </form>
             <br>
             <br>
-            
+            <h2 style="text-align: center;"> <i><b>Wellcome to TODO APP</b></i>  </h2>
 
-            
+            <h2 style="text-align: center;"> <i><b>Planning means looking ahead!!!</b></i>  </h2>
 
-            <div id="middlebody">
-                <h2 style="text-align: center;padding: 40px;"> <i><b>Wellcome to TODO APP</b></i>  </h2>
-                <div id="addtask">
-                    <a href="addtask"><i style="font-size: 200px;text-align: center;" class="bi bi-plus-circle-fill"></i></a>
+            <form action="/posttask" method="POST" id="middlebody">
+                <h2 >Title</h2><input id="addform" type="text" name="title">
+                
+                
+                <h2 >Catagory</h2> 
+                <select id="addform" name="category" id="">
+                    <option value="">sport</option>
+                    <option value="">study</option>
+                    <option value="">shopping</option>
+                    <option value="">travel</option>
+                </select>
+                <h2>Status</h2> <input name="status" id="addform" type="pending" value="inprogress" name="inprogress">
+                <h2>Due Date</h2>  <input name="due_date" id="addform" type="due_date">
                 <br>
-                <label for="">Click Here </label><i class="bi bi-arrow-up"></i><label for="">to add Your Task</label>
-
-                </div>
-               
-
-                
-                
-
-
-                <!-- <div id="sportstudy">
-                    <div style="background-image: url(../images/sport.jpeg)" id="middlebody1">
-                        <h1  >&nbsp; Sports</h1>
-                    </div>
-                    <br>
-                    <div style="background-image: url(../images/study.jpeg)" id="middlebody1">
-                        <h1>&nbsp; Study</h1>
-                    </div>
-
-                </div>
-
-                <div  id="shoopingtravel">
-                    <div style="background-image: url(../images/shooping.jpeg)" id="middlebody1">
-                        <h1>&nbsp; Shooping</h1>
-                    </div>
-                    <br>
-                    <div style="background-image: url(../images/travel.jpeg)" id="middlebody1">
-                        <h1>&nbsp; Travel</h1>
-                    </div> -->
-
-                </div>
-
-
-
-
-            </div>
+                <h2>Discription</h2>
+                <textarea placeholder="Insert Your Task Discreption here" name="description" id="" cols="60" rows="10"></textarea>
+                <br>
+                <button id="submitbutton">Submit</button>
+            </form>
 
         </div>
         <div id="username">
@@ -277,7 +262,6 @@ body{
         <div id="accountphoto">
 
             <i style="font-size: 50px;" class="bi bi-person-circle"></i>
-
         </div>
 
 

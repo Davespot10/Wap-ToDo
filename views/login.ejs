@@ -1,127 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO | </title>
+
+
+    <title>TODO | login</title>
+
+    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../public/stylesheets/login.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap');
-body{
-    background-image: url(../images/background\ 4.webp);
 
-}
+        body {
+            background-image: url(../images/background\ 4.webp);
+
+        }
 
 
-#outer{
-    margin:12rem;
-    margin-left: 30rem;
-    
-    background-image: url(../images/b6.webp);
-    opacity:80%;
-    border-radius: 10%;
-    width: 40%;
-    
-}
-input{
-    background-color:rgba(255, 255, 255, 0.718);
-    color:black;
+        #outer {
+            margin: 12rem;
+            margin-left: 30rem;
 
-    border-radius:1rem;
-    height: 2rem;
-}
+            background-image: url(../images/b6.webp);
+            opacity: 80%;
+            border-radius: 10%;
+            width: 40%;
 
-#ep{
-    width: 18rem;
-    height: 2rem;
-}
-#footer{
-    display: flex;
-   justify-content: space-between;
-   padding-bottom: 2rem;
-   padding-right: 1rem;
-   
-    
+        }
 
-}
-#contact{
-    padding: 2rem;
-}
-#creatAccount{
-   padding-left: 2rem;
-    padding-top: 1rem;
-}
-#forgotpassword{
-    display:flex;
-    
-    
-    padding-left: 2rem;
-    padding-right: 1rem;
-}
-        
+        input {
+            background-color: rgba(255, 255, 255, 0.718);
+            color: black;
+
+            border-radius: 1rem;
+            height: 2rem;
+        }
+
+        #ep {
+            width: 18rem;
+            height: 2rem;
+        }
+
+        #footer {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 2rem;
+            padding-right: 1rem;
+
+
+
+        }
+
+        #contact {
+            padding: 2rem;
+        }
+
+        #creatAccount {
+            padding-left: 2rem;
+            padding-top: 1rem;
+        }
+
+        #forgotpassword {
+            display: flex;
+
+
+            padding-left: 2rem;
+            padding-right: 1rem;
+        }
     </style>
 </head>
+
 <body id=>
     <div id="outer">
         <form action="/postlogin" method="post" id="creatAccount">
             <p style="color: rgb(69, 188, 69);"><b>START FOR FREE</b> </p>
             <h2 style="color: white;">Log In</h2>
             <p style="color: white;">Your email</p>
-           
+
             <input placeholder=" Email" type="text" class="" name="username" id="ep">
             <br>
-        
+
             <p style="color: white;">Your Password</p>
             <input placeholder=" Password" type="password" class="" name="password" id="ep">
             <br>
             <br>
-            <div >
-                <button  style="background-color:rgb(74, 173, 74);color: white;border-radius: 1rem; height: 2rem;width: 18rem;" id="creataccount">Login</button>
+            <div>
+                <button
+                    style="background-color:rgb(74, 173, 74);color: white;border-radius: 1rem; height: 2rem;width: 18rem;"
+                    id="creataccount">Login</button>
             </div>
 
 
         </form>
-    
-            
-            <br>
-            <br>
-            <div id="forgotpassword" >
-                <a style="color: rgb(29, 164, 227);" href="signup"> Creat an account</a>
-                <span> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</span>
-                <a style="color: rgb(29, 164, 227);" href="">Forgot Password</a>
-               </div>
-            <div id="footer">
-                   <div id="contact">
-                    <label style="color: white;" >Phone Number: </label>
-                     <a style="text-decoration:none;color: rgb(255, 255, 255);"  href="tel:+251966678513">+251966678513</a>
-                    <br>
-                    <label style="color: white;" for="">Email: </label>
-                    
-                     <a style="text-decoration:none;color: white;" href="davespot10@gmail.com">mppfinal@sridevi.com</a>
-                   </div>
-                  
 
-                
-                
-               
-                      <div id="icon">
-                        <p style="color: white;">Stay Connected:</p>
-                        <a href="#" class="fa fa-facebook-square" style="font-size:30px;color:rgb(26, 125, 187)"></a>
-                        <a href="#" class="fa fa-telegram" style="font-size:30px;color:rgb(34, 106, 138)"></a>
-                        <a href="#" class="fa fa-twitter" style="font-size:30px;color:rgb(0, 34, 255);text-decoration: none;"></a>
-                        <a href="#" class="fa fa-instagram" style="font-size:30px;color:rgb(255, 89, 0)"></a>
 
-                       </div>
-   
+        <br>
+        <br>
+        <div id="forgotpassword">
+            <a style="color: rgb(29, 164, 227);" href="signup"> Creat an account</a>
+            <span> &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</span>
+            <a style="color: rgb(29, 164, 227);" href="">Forgot Password</a>
+        </div>
+        <div id="footer">
+            <div id="contact">
+                <label style="color: white;">Phone Number: </label>
+                <a style="text-decoration:none;color: rgb(255, 255, 255);" href="tel:+251966678513">+251966678513</a>
+                <br>
+                <label style="color: white;" for="">Email: </label>
+
+                <a style="text-decoration:none;color: white;" href="davespot10@gmail.com">mppfinal@sridevi.com</a>
             </div>
-                    
-                    
-        
-            
+
+
+
+
+
+            <div id="icon">
+                <p style="color: white;">Stay Connected:</p>
+                <a href="#" class="fa fa-facebook-square" style="font-size:30px;color:rgb(26, 125, 187)"></a>
+                <a href="#" class="fa fa-telegram" style="font-size:30px;color:rgb(34, 106, 138)"></a>
+                <a href="#" class="fa fa-twitter"
+                    style="font-size:30px;color:rgb(0, 34, 255);text-decoration: none;"></a>
+                <a href="#" class="fa fa-instagram" style="font-size:30px;color:rgb(255, 89, 0)"></a>
+
+            </div>
+
+        </div>
+
+
+
+
 
 
     </div>
 </body>
+
 </html>
