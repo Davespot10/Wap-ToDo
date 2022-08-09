@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
 const mongoose = require("mongoose");
 var user = require('./models/user');
 let loginRoute=require("./routes/login")
@@ -19,6 +20,7 @@ let delatedtaskRoute=require("./routes/delatedtask")
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var itemRouter = require('./routes/item');
+var todoRouter = require('./routes/todo')
 
 
 
@@ -52,6 +54,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/todo',todoRouter);
 app.use('/users', usersRouter);
 app.use('/item', itemRouter);
 app.use(loginRoute)
