@@ -5,16 +5,16 @@ const Todo = require("../models/todo");
 
 router.get("/", function (req, res, next) {
 
-    
+  if(req.cookies.currentUser == undefined){
+    res.redirect('/login')
+    return
+  }
 
-    // let user = here you get the user from the cookie
-    // let user_id
+  let userId = req.cookies.currentUser.split(',')[0]
+  Todo.find({userId:userId}).then(data =>{
+    res.send(data);
+  })
 
-    // ////////
-//     Todo.find({userId: user_id})
-//     .catch((err)=>{
-//         res.send(err);
-//     });
 
 });
 
@@ -36,16 +36,36 @@ router.post("/", (req, res) => {
   doc.description = req.body.description;
   doc.title = req.body.title;
   doc.status = req.body.status;
-
   doc.category = req.body.category;
   doc.due_date = req.body.due_date;
-  doc.todoId = req.body.todoId;
+  // doc.todoId = req.body.todoId;
 
   doc.save();
-
   res.send(doc);
 });
 
+router.put('/update/status', (req, res) =>{
+  console.log(req.body.todoName);
+  Todo.updateOne({todoName:req.body.todoName,userId:req.cookies.currentUser.split(',')[0]},{status:req.body.status}).then((data)=>{
+    res.send(data)
+  }).catch((error)=>{
+    res.statusCode(500).send(error)
+  })
+  
+})
+
+
+router.delete("/:id", (req, res) => {
+  const delId = req.params.id;
+  Todo
+    .deleteOne({ _id: delId })
+    .then((todo) => {
+      res.send(todo);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+});
 
 
 
