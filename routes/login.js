@@ -15,16 +15,21 @@ router.post("/postlogin", async (req, res) => {
   if (
     data.some(
       (user) =>
-        user.userId === req.body.userName && user.password === req.body.password
+        user.userId === req.body.username && user.password === req.body.password
     )
   ) {
-    res.cookie("currentUser", req.body.userName + "," + req.body.password);
+    res.cookie("currentUser", req.body.username + "," + req.body.password);
 
     res.redirect("/homepage");
   } else {
     res.redirect("/login");
   }
 });
+
+router.post('/postLogout',(req,res)=>{
+    res.clearCookie("currentUser");
+    res.redirect('/login');
+})
 router.post("/postsignup", (req, res) => {
   res.redirect("/login");
 });
