@@ -5,13 +5,13 @@ const Todo = require("../models/todo");
 
 router.get("/", function (req, res, next) {
 
-  if(req.cookies.currentUser == undefined){
-    res.redirect('/login')
-    return
-  }
+  // if(req.cookies.currentUser == undefined){
+  //   res.redirect('/login')
+  //   return
+  // }
 
-  let userId = req.cookies.currentUser.split(',')[0]
-  Todo.find({userId:userId}).then(data =>{
+  // let userId = req.cookies.currentUser.split(',')[0]
+  Todo.find({userId:'merha'}).then(data =>{
     res.send(data);
   })
 

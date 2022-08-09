@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const fetch = require('node-fetch')
 
 const mongoose = require("mongoose");
 var user = require('./models/user');
@@ -12,6 +13,7 @@ let alltaskRoute=require("./routes/alltask")
 let complatedtaskRoute=require("./routes/complatedtask")
 let pendingtaskRoute=require("./routes/pendingtask")
 let delatedtaskRoute=require("./routes/delatedtask")
+let addTaskRoute=require("./routes/addtask")
 
 
 todo=[
@@ -25,6 +27,8 @@ todo=[
   {title:"Study MPP",description:"Plan to study Inheritance",due_date:"12-08-2022",catagory:"travel",status:"pending"},
   {title:"Study EA",description:"Plan to study JPA",due_date:"09-01-2022",catagory:"study",status:"done"}
 ]
+
+
 
 
 
@@ -74,6 +78,7 @@ app.use(alltaskRoute)
 app.use(complatedtaskRoute)
 app.use(pendingtaskRoute)
 app.use(delatedtaskRoute)
+app.use(addTaskRoute)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
