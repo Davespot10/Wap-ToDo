@@ -25,6 +25,11 @@ router.post("/postlogin", async (req, res) => {
     res.redirect("/login");
   }
 });
+
+router.post('/postLogout',(req,res)=>{
+    res.clearCookie("currentUser");
+    res.redirect('/login');
+})
 router.post("/postsignup", (req, res) => {
   res.redirect("/login");
 });
