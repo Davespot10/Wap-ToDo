@@ -41,10 +41,6 @@ if(req.cookies.currentUser == undefined){
   }).catch((err)=>{
     res.send(err);
   });
-
-
-
-
 });
 
 
