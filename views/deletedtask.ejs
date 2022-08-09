@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%-include("./partials/head.ejs") %>
+<%-include('./partials/head.ejs') %>
+    <!-- <form class="example" >
+    <label>TASKS</label>
+    <input type="text" placeholder="Search.." name="search2">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form> -->
 
     <body>
 
         <div id="outer" class="aa">
 
 
-            <%-include("./partials/div.ejs") %>
+            <%-include('./partials/div.ejs') %>
 
                 <div id="middle">
                     <form class="container">
@@ -30,7 +35,7 @@
                     </form>
                     <br>
                     <br>
-                    <h2 style="text-align: center;"> <i><b>Pending Tasks!!!</b></i> </h2>
+                    <h2 style="text-align: center;"> <i><b>deleted Tasks!!!</b></i> </h2>
                     <!-- // title:"Study Wap",
                     //description:"Plan to study Jquery and Dom Manipulation",
                     //plannedDate:"09-08-2022",
@@ -54,7 +59,7 @@
                                                 </div>
                                                 <div class="category">
                                                     <% for(let i=0;i<todo.length;i++){ %>
-                                                        <% if(todo[i].category=="sport" &&todo[i].status=="pending" ){
+                                                        <% if(todo[i].category=="sport" &&todo[i].status=="deleted" ){
                                                             %>
                                                             <% countsport=countsport+1 %>
 
@@ -104,7 +109,7 @@
                                                 </div>
                                                 <div class="category">
                                                     <% for(let i=0;i<todo.length;i++){ %>
-                                                        <% if(todo[i].category=="study" &&todo[i].status=="pending" ){
+                                                        <% if(todo[i].category=="study" &&todo[i].status=="deleted" ){
                                                             %>
                                                             <% countstudy=countstudy+1 %>
 
@@ -130,7 +135,7 @@
                                                                         <% if(todo.length==0||countstudy==0){ %>
                                                                             <h2 class="notodo"> SORRY!!! There is no
                                                                                 task to display...
-                                                                                diplay...
+
                                                                             </h2>
 
                                                                             <%} %>
@@ -153,7 +158,7 @@
                                                 </div>
                                                 <div class="category">
                                                     <% for(let i=0;i<todo.length;i++){ %>
-                                                        <% if(todo[i].category=="shopping" &&todo[i].status=="pending"
+                                                        <% if(todo[i].category=="shopping" &&todo[i].status=="deleted"
                                                             ){ %>
                                                             <% countshopping=countshopping+1 %>
 
@@ -197,7 +202,7 @@
                                                 </div>
                                                 <div class="category">
                                                     <% for(let i=0;i<todo.length;i++){ %>
-                                                        <% if(todo[i].category=="travel" &&todo[i].status=="pending" ){
+                                                        <% if(todo[i].category=="travel" &&todo[i].status=="deleted" ){
                                                             %>
                                                             <% counttravel=counttravel+1 %>
 

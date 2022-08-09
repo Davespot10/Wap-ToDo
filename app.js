@@ -10,9 +10,9 @@ var user = require('./models/user');
 let loginRoute=require("./routes/login")
 let hompageRoute=require("./routes/homepage")
 let alltaskRoute=require("./routes/alltask")
-let complatedtaskRoute=require("./routes/complatedtask")
+let completedtaskRoute=require("./routes/completedtask")
 let pendingtaskRoute=require("./routes/pendingtask")
-let delatedtaskRoute=require("./routes/delatedtask")
+let deletedtaskRoute=require("./routes/deletedtask")
 let addTaskRoute=require("./routes/addtask")
 const Todo = require("./models/todo");
 
@@ -20,15 +20,15 @@ const todo = Todo.find({});
 console.log("todo",todo);
 
 // todo=[
-//   {title:"Study Wap",description:"Plan to study Jquery and Dom Manipulation",due_date:"09-08-2022",catagory:"travel",status:"pending"},
-//   {title:"Study MPP",description:"Plan to study Inheritance",due_date:"12-08-2022",catagory:"study",status:"pending"},
-//   {title:"Study EA",description:"Plan to study JPA",due_date:"09-01-2022",catagory:"shopping",status:"pending"},
-//   {title:"Study Wap",description:"Plan to study Jquery and Dom Manipulation",due_date:"09-08-2022",catagory:"travel",status:"pending"},
-//   {title:"Study MPP",description:"Plan to study Inheritance",due_date:"12-08-2022",catagory:"study",status:"pending"},
-//   {title:"Study EA",description:"Plan to study JPA",due_date:"09-01-2022",catagory:"sport",status:"pending"},
-//   {title:"Study Wap",description:"Plan to study Jquery and Dom Manipulation",due_date:"09-08-2022",catagory:"travel",status:"pending"},
-//   {title:"Study MPP",description:"Plan to study Inheritance",due_date:"12-08-2022",catagory:"travel",status:"pending"},
-//   {title:"Study EA",description:"Plan to study JPA",due_date:"09-01-2022",catagory:"study",status:"done"}
+//   {title:"Study Wap",description:"Plan to study Jquery and Dom Manipulation",due_date:"09-08-2022",category:"travel",status:"pending"},
+//   {title:"Study MPP",description:"Plan to study Inheritance",due_date:"12-08-2022",category:"study",status:"pending"},
+//   {title:"Study EA",description:"Plan to study JPA",due_date:"09-01-2022",category:"shopping",status:"pending"},
+//   {title:"Study Wap",description:"Plan to study Jquery and Dom Manipulation",due_date:"09-08-2022",category:"travel",status:"pending"},
+//   {title:"Study MPP",description:"Plan to study Inheritance",due_date:"12-08-2022",category:"study",status:"pending"},
+//   {title:"Study EA",description:"Plan to study JPA",due_date:"09-01-2022",category:"sport",status:"pending"},
+//   {title:"Study Wap",description:"Plan to study Jquery and Dom Manipulation",due_date:"09-08-2022",category:"travel",status:"pending"},
+//   {title:"Study MPP",description:"Plan to study Inheritance",due_date:"12-08-2022",category:"travel",status:"pending"},
+//   {title:"Study EA",description:"Plan to study JPA",due_date:"09-01-2022",category:"study",status:"done"}
 // ]
 
 
@@ -78,9 +78,9 @@ app.use('/item', itemRouter);
 app.use(loginRoute)
 app.use(hompageRoute)
 app.use(alltaskRoute)
-app.use(complatedtaskRoute)
+app.use(completedtaskRoute)
 app.use(pendingtaskRoute)
-app.use(delatedtaskRoute)
+app.use(deletedtaskRoute)
 app.use(addTaskRoute)
 
 // catch 404 and forward to error handler

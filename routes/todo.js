@@ -18,18 +18,14 @@ router.get("/", function (req, res, next) {
   // }
 
   let userId = req.cookies.currentUser.split(',')[0];
-  // Todo.find({userId:userId}).then(todo =>{
+  Todo.find({userId:userId}).then(todo =>{
   Todo.find().then(todo =>{
-    let to = []
-    todo.forEach(o=> {
-      to.push(o['id'])
-    })
-    res.render('alltask.ejs', { title: 'ALL Tasks', todo });
-    // res.send(data);
+    // res.render('alltask.ejs', { title: 'ALL Tasks', todo });
+    res.send(data);
   }).catch((err)=>{
     res.send(err);
   })
-// });
+});
 });
 
 
