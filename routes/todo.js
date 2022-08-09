@@ -20,12 +20,15 @@ router.get("/", function (req, res, next) {
 
 
 router.post("/", (req, res) => {
-  console.log("requested body: ", req.body);
+  
+if(req.cookies.currentUser == undefined){
+  res.redirect('/login')
+  return;
+}
   let userId = req.cookies.currentUser.split(',')[0];
-
   Todo.find({ userId: userId }).then((data)=>{
     const doc = new Todo();
-    doc.todoName = req.body.todoName;
+
     doc.userId = req.body.userId;
     doc.description = req.body.description;
     doc.title = req.body.title;
@@ -33,15 +36,17 @@ router.post("/", (req, res) => {
     doc.category = req.body.category;
     doc.due_date = req.body.due_date;
 
-
     doc.save();
     res.send(doc);
   }).catch((err)=>{
     res.send(err);
   });
 
-  
+
+
+
 });
+
 
 router.put('/update/status', (req, res) =>{
   console.log(req.body.todoName);
@@ -53,15 +58,18 @@ router.put('/update/status', (req, res) =>{
   
 });
 
-router.put('/update/todoName',(req,res)=>{
+
+
+router.put('/update/title',(req,res)=>{
   let todoId = req.body.id;
   let userId = req.cookies.currentUser.split(",")[0];
-  Todo.updateOne({ _id: todoId, userId: userId },{todoName : req.body.todoName}).then((data)=>{
+  Todo.updateOne({ _id: todoId, userId: userId },{title : req.body.title}).then((data)=>{
     res.send(data);
   }).catch((err)=>{
     res.send(err);
   });
 })
+
 
 router.put("/update/category", (req, res) => {
   let todoId = req.body.id;

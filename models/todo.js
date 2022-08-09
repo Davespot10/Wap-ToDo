@@ -4,10 +4,6 @@ const Schema = mongoose.Schema;
 
 const todoSchema = new Schema({
   
-  todoName: {
-    type: String,
-    required: true
-  },
   userId: {
     type: String,
     required: true
