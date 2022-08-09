@@ -41,26 +41,11 @@ router.post("/", (req, res) => {
   doc.due_date = req.body.due_date;
   doc.todoId = req.body.todoId;
 
-
-
   doc.save();
 
   res.send(doc);
 });
 
-
-
-  
-
-
-// user
-//   .deleteOne({ _id: delId })
-//   .then((users) => {
-//     res.send(user);
-//   })
-//   .catch((err) => {
-//     res.send(err);
-//   });
 
 
 
