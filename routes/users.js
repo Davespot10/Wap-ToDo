@@ -6,15 +6,11 @@ var user = require("../models/user");
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   
-  user.find().then((users) => {
-    res.send(users)
-  })
-    .catch((err)=> {
-      res.send(err);
-    })
+  user.find({}, (err, users) => {
+    res.send(users);
   });
   
-
+});
 
 router.post('/', (req, res) => {
   console.log("requested body: ",req.body);
@@ -28,20 +24,6 @@ router.post('/', (req, res) => {
 
   doc.save();
   res.send('user saved succesfully')
-});
-
-router.delete('/:id',(req,res)=>{
-  const delId = rew.params.id;
-user
-  .deleteOne({ _id: delId })
-  .then((users) => {
-    res.send(user);
-  })
-  .catch((err) => {
-    res.send(err);
-  });
-  
-
 })
 
 module.exports = router;
