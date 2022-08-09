@@ -1,139 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../public/stylesheets/homepage.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap');
-body{
-    background-image: url(../images/b5.jpeg);
-}
-
-
-#outer {
-    background-image: url(../images/b10.jpeg);    border-radius: 4rem;
-
-    margin: 3rem;
-    display: flex;
-    justify-content:space-evenly;
-    background-color: #d6d4d4;
-    height: 1800%;
-}
-
-
-
-.search {
-    position: relative;
-    box-shadow: 0 0 40px rgba(229, 20, 20, 0.1);
-
-}
-
-.search input {
-    border-radius: 2rem;
-    height: 60px;
-
-    text-indent: 25px;
-    border: 2px solid #d6d4d4;
-
-}
-
-.search button {
-    border-radius: 2rem;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    height: 50px;
-    width: 110px;
-    background: rgb(0, 174, 255);
-    border-radius: 2rem;
-
-}
-
-
-
-
-#task {
-    padding-left: 4rem;
-
-}
-
-#todolist,
-#complated,
-#pending,
-#delated,#space {
-    padding: 2.5rem;
-    text-align: center;
-
-}
-#space {
-    margin-top:60rem;
-}
-
-
-
-
-
-#delated:hover,
-#todolist:hover,
-#complated:hover,
-#pending:hover {
-    font-size: 1.1em;
-    background-color: rgb(211, 228, 215);
-
-}
-
-#middlebody {
-    height: 80%;
-    border: 1px solid;
-    width: 120%;
-    display: flex;
-    justify-content: space-between;
-
-}
-
-#accountphoto {
-
-    padding: -200px;
-
-}
-
-#username {
-    margin-right: 50px;
-
-}
-
-#middlebody1 {
-    display: flex;
-    height: 49%;
-    border: 1px solid;
-    width: 100%;
-    flex-wrap: wrap;
-
-}
-
-
-
-#sportstudy {
-    width: 49%;
-
-}
-
-#shoopingtravel {
-    width: 49%;
-
-}
-       
-       
-        
-    </style>
-</head>
+    <%-include("./partials/head.ejs") %>
 <!-- <form class="example" >
     <label>TASKS</label>
     <input type="text" placeholder="Search.." name="search2">
@@ -141,44 +9,12 @@ body{
   </form> -->
 
 <body>
-    
+
     <div id="outer" class="aa">
 
 
-        <div id="leftbar">
-            <a href="homepage">
-                <h3  id="task">TASK</h3>
-            </a>
-            <a href="alltask">
-            <div id="todolist">
-                <i class="bi bi-list-task" style="font-size: 50px;"></i>
-                <p>TO DO Lists</p>
-            </div>
-        </a>
-        <a href="pendingtask">
+        <%-include("./partials/div.ejs") %> 
 
-       
-            <div id="pending">
-                <i style="font-size: 50px;" class="bi bi-alarm-fill"></i>
-                <p>Task Pending</p>
-            </div>
-        </a>
-        <a href="complatedtask">
-            <div id="complated">
-                <i style="font-size: 50px;" class="bi bi-check2-circle"></i>
-                <p>Task Complated</p>
-            </div>
-        </a>
-        <a href="delatedtask">
-            <div id="delated">
-                <i style="font-size: 50px;" class="bi bi-trash3-fill"></i>
-                <p>Task Delated</p>
-            </div>
-        </a>
-            <div id="space">
-
-            </div>
-        </div>
         <div id="middle">
             <form class="container">
 
@@ -199,35 +35,196 @@ body{
             </form>
             <br>
             <br>
-            <h2 style="text-align: center;"> <i><b>Delated Tasks!!!</b></i>  </h2>
+            <h2 style="text-align: center;"> <i><b>All Tasks!!!</b></i> </h2>
+            <!-- // title:"Study Wap",
+                    //description:"Plan to study Jquery and Dom Manipulation",
+                    //plannedDate:"09-08-2022",
+                    //catagory:"travel,sport,study,shopping"
+                    //status:"pending,done,delated" -->
+            <!-- for( let i=0;i<todo.length;i++){
+                if(todo[i].status==)
+            }      
+         -->
+            <% let countstudy=0; %>
+                <% let countshopping=0; %>
+                    <% let counttravel=0; %>
+                        <% let countsport=0; %>
 
-            <div id="middlebody">
-                <div id="sportstudy">
-                    <div id="middlebody1">
-                        <h1>&nbsp; Sports</h1>
-                    </div>
-                    <br>
-                    <div id="middlebody1">
-                        <h1>&nbsp; Study</h1>
-                    </div>
+                            <div id="middlebody">
+                                <div id="sportstudy">
+                                    <div id="middlebody1">
+                                        <div id="todo_catagory">
+                                            <h1>&nbsp; Sports</h1>
 
-                </div>
+                                        </div>
+                                        <div class="catagory">
+                                            <% for(let i=0;i<todo.length;i++){ %>
+                                                <% if(todo[i].catagory=="sport"&&todo[i].status=="delated"   ){ %>
+                                                    <% countsport=countsport+1 %>
+    
+                                                        <div style="font-size:large;" id="tasks">
+                                                            <h3><b>plan <%=countsport %>
+                                                            </h3></b></h3>
+                                                            <p class="title"> <label for=""> <b>Title:</b> </label>
+                                                                <%= todo[i].title %>
+                                                            </p>
+                                                            <p class="description"><label for=""><b>Description:</b>
+                                                                </label>
+                                                                <%= todo[i].description %>
+                                                            </p>
+                                                            <p class="plannedDate"><label for=""><b>
+                                                                        PlannedDate:</b></label>
+                                                                <%= todo[i].plannedDate %>
+                                                            </p>
+                                                        </div>
+                                                        <% }%>
+                                                            <% } %>
+                                                                <% if(todo.length==0||countsport==0){ %>
+                                                                    <h2 class="notodo"> SORRY!!! There is no task to display...
+                                                                    </h2>
+    
+                                                                    <%} %>
 
-                <div id="shoopingtravel">
-                    <div id="middlebody1">
-                        <h1>&nbsp; Shooping</h1>
-                    </div>
-                    <br>
-                    <div id="middlebody1">
-                        <h1>&nbsp; Travel</h1>
-                    </div>
-
-                </div>
+                                        </div>
 
 
 
+                                       
 
-            </div>
+
+                                    </div>
+                                    <br>
+
+
+                                    <div id="middlebody1">
+
+
+                                        <div id="todo_catagory">
+                                            <h1>&nbsp; Study</h1>
+
+                                        </div>
+                                        <div class="catagory">
+                                            <% for(let i=0;i<todo.length;i++){ %>
+                                                <% if(todo[i].catagory=="study"&&todo[i].status=="delated"   ){ %>
+                                                    <% countstudy=countstudy+1 %>
+
+                                                        <div style="font-size:large;" id="tasks">
+                                                            <h3><b>plan <%=countstudy %>
+                                                            </h3></b></h3>
+                                                            <p class="title"> <label for=""> <b>Title:</b> </label>
+                                                                <%= todo[i].title %>
+                                                            </p>
+                                                            <p class="description"><label for=""><b>Description:</b>
+                                                                </label>
+                                                                <%= todo[i].description %>
+                                                            </p>
+                                                            <p class="plannedDate"><label for=""><b>
+                                                                        PlannedDate:</b></label>
+                                                                <%= todo[i].plannedDate %>
+                                                            </p>
+                                                        </div>
+                                                        <% }%>
+                                                            <% } %>
+                                                                <% if(todo.length==0||countstudy==0){ %>
+                                                                    <h2 class="notodo"> SORRY!!! There is no task to display...
+                                                                       
+                                                                    </h2>
+
+                                                                    <%} %>
+
+
+                                        </div>
+
+
+
+
+                                    </div>
+
+                                </div>
+
+                                <div id="shoopingtravel">
+                                    <div id="middlebody1">
+                                        <div id="todo_catagory">
+                                            <h1>&nbsp; Shopping</h1>
+
+                                        </div>
+                                        <div class="catagory">
+                                            <% for(let i=0;i<todo.length;i++){ %>
+                                                <% if(todo[i].catagory=="shopping"&&todo[i].status=="delated"  ){ %>
+                                                    <% countshopping=countshopping+1 %>
+    
+                                                        <div style="font-size:large;" id="tasks">
+                                                            <h3><b>plan <%=countshopping %>
+                                                            </h3></b></h3>
+                                                            <p class="title"> <label for=""> <b>Title:</b> </label>
+                                                                <%= todo[i].title %>
+                                                            </p>
+                                                            <p class="description"><label for=""><b>Description:</b>
+                                                                </label>
+                                                                <%= todo[i].description %>
+                                                            </p>
+                                                            <p class="plannedDate"><label for=""><b>
+                                                                        PlannedDate:</b></label>
+                                                                <%= todo[i].plannedDate %>
+                                                            </p>
+                                                        </div>
+                                                        <% }%>
+                                                            <% } %>
+                                                                <% if(todo.length==0||countshopping==0){ %>
+                                                                    <h2 class="notodo"> SORRY!!! There is no task to display...
+                                                                    </h2>
+    
+                                                                    <%} %>
+    
+
+                                        </div>
+
+                                        
+
+                                    </div>
+                                    <br>
+                                    <div id="middlebody1">
+                                        <div id="todo_catagory">
+                                            <h1>&nbsp; Travel</h1>
+
+                                        </div>
+                                        <div class="catagory">
+                                            <% for(let i=0;i<todo.length;i++){ %>
+                                                <% if(todo[i].catagory=="travel"&&todo[i].status=="delated"   ){ %>
+                                                    <% counttravel=counttravel+1 %>
+    
+                                                        <div style="font-size:large;" id="tasks">
+                                                            <h3><b>plan <%=counttravel %>
+                                                            </h3></b></h3>
+                                                            <p class="title"> <label for=""> <b>Title:</b> </label>
+                                                                <%= todo[i].title %>
+                                                            </p>
+                                                            <p class="description"><label for=""><b>Description:</b>
+                                                                </label>
+                                                                <%= todo[i].description %>
+                                                            </p>
+                                                            <p class="plannedDate"><label for=""><b>
+                                                                        PlannedDate:</b></label>
+                                                                <%= todo[i].plannedDate %>
+                                                            </p>
+                                                        </div>
+                                                        <% }%>
+                                                            <% } %>
+                                                                <% if(todo.length==0||counttravel==0){ %>
+                                                                    <h2 class="notodo"> SORRY!!! There is no task to display...
+                                                                    </h2>
+    
+                                                                    <%} %>
+
+                                        </div>
+
+                                        
+                                    </div>
+
+                                </div>
+                            </div>
+
+
 
         </div>
         <div id="username">
