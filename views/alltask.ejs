@@ -47,8 +47,9 @@
                                             <% for(let i=0;i<todo.length;i++){ %>
                                                 <% if(todo[i].category=="sport" ){ %>
                                                     <% countsport=countsport+1 %>
-    
+                                                    <a class="editedContainer" href="/edittask/<%=todo[i]._id%>" >
                                                         <div style="font-size:large;" id="tasks">
+                                                            
                                                             <h3><b>plan <%=countsport %>
                                                             </h3></b></h3>
                                                             <p class="title"> <label for=""> <b>Title:</b> </label>
@@ -62,7 +63,10 @@
                                                                 due_date:</b></label>
                                                                 <%= todo[i].due_date %>
                                                             </p>
-                                                        </div>
+                                                        </a>
+                                                    </div>
+
+
                                                         <% }%>
                                                             <% } %>
                                                                 <% if(todo.length==0||countsport==0){ %>
