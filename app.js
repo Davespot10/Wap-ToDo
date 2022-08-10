@@ -16,17 +16,6 @@ let delatedtaskRoute=require("./routes/delatedtask")
 let addTaskRoute=require("./routes/addtask")
 
 
-todo=[
-  {title:"Study Wap",description:"Plan to study Jquery and Dom Manipulation",due_date:"09-08-2022",catagory:"travel",status:"pending"},
-  {title:"Study MPP",description:"Plan to study Inheritance",due_date:"12-08-2022",catagory:"study",status:"pending"},
-  {title:"Study EA",description:"Plan to study JPA",due_date:"09-01-2022",catagory:"shopping",status:"pending"},
-  {title:"Study Wap",description:"Plan to study Jquery and Dom Manipulation",due_date:"09-08-2022",catagory:"travel",status:"pending"},
-  {title:"Study MPP",description:"Plan to study Inheritance",due_date:"12-08-2022",catagory:"study",status:"pending"},
-  {title:"Study EA",description:"Plan to study JPA",due_date:"09-01-2022",catagory:"sport",status:"pending"},
-  {title:"Study Wap",description:"Plan to study Jquery and Dom Manipulation",due_date:"09-08-2022",catagory:"travel",status:"pending"},
-  {title:"Study MPP",description:"Plan to study Inheritance",due_date:"12-08-2022",catagory:"travel",status:"pending"},
-  {title:"Study EA",description:"Plan to study JPA",due_date:"09-01-2022",catagory:"study",status:"done"}
-]
 
 
 
@@ -44,7 +33,7 @@ var todoRouter = require('./routes/todo');
 
 var app = express();
 
-// connect to mongoDb
+// connect to mongoDb this
 const dbUri = `mongodb+srv://merdevtodo:mershdev@cluster0.zbmdck4.mongodb.net/todo-database?retryWrites=true&w=majority`;
 mongoose
   .connect(dbUri)
