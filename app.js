@@ -14,7 +14,11 @@ let complatedtaskRoute=require("./routes/complatedtask")
 let pendingtaskRoute=require("./routes/pendingtask")
 let delatedtaskRoute=require("./routes/delatedtask")
 let addTaskRoute=require("./routes/addtask")
+
 const cors = require('cors')
+
+
+let editRoute = require('./routes/edit')
 
 
 
@@ -65,18 +69,19 @@ app.use('/todo',todoRouter);
 app.use('/users', usersRouter);
 app.use('/item', itemRouter);
 app.use(loginRoute)
-app.use('/*',authRoute)
+// app.use('/*',authRoute)
 app.use(hompageRoute)
 app.use(alltaskRoute)
 app.use(complatedtaskRoute)
 app.use(pendingtaskRoute)
 app.use(delatedtaskRoute)
 app.use(addTaskRoute)
+app.use(editRoute)
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+// app.use(function(req, res, next) {
+//   next(createError(404));
+// });
 
 // error handler
 app.use(function(err, req, res, next) {

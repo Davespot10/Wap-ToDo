@@ -1,3 +1,4 @@
+const { render } = require('ejs');
 var express = require('express');
 var router = express.Router();
 const Todo = require('../models/todo');
@@ -13,7 +14,4 @@ router.get('/alltask', function(req, res, next) {
   }) 
  
   });
-
-  
-
 module.exports = router;
