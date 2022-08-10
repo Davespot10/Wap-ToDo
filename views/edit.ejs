@@ -238,25 +238,24 @@
 
             <h2 style="text-align: center;"> <i><b>Planning means looking ahead!!!</b></i> </h2>
 
-            <form action="/todo" method="Put" id="middlebody">
-                <h2>Title</h2><input id="addform" type="text" name="title" value= "<%= todo.title%>" >
-
-
+            <div id="middlebody">
+                <h2>Title</h2><input id="title" type="text" name="title" value= "<%= todo.title%>" >
+                
                 <h2>category</h2>
-                <select id="addform" value="<%= todo.category %>" name="category" id="" >
+                <select id="category" value="<%= todo.category %>" name="category" id="" >
                     <option value="sport">sport</option>
                     <option value="study">study</option>
                     <option value="shopping">shopping</option>
                     <option value="travel">travel</option>
                 </select>
-                <h2>Due Date</h2> <input name="due_date" id="addform" type="due_date" value="<%= todo.due_date %>">
+                <h2>Due Date</h2> <input name="due_date" id="due_date" type="due_date" value="<%= todo.due_date %>">
                 <br>
                 <h2>Discription</h2>
-                <textarea placeholder="Insert Your Task Discreption here" name="description" id="" cols="60"
+                <textarea  placeholder="Insert Your Task Discreption here" name="description" id="description" cols="60"
                     rows="10"><%= todo.description %></textarea>
                 <br>
-                <button id="submitbutton">Submit</button>
-            </form>
+                <button onclick="update" id="submitbutton">Submit</button>
+            </div>
 
         </div>
         <div id="username">
@@ -271,7 +270,34 @@
         </div>
 
     </div>
+    
 
+    <script>
+        function update(){
+        const title = $('#title').val();
+        const description= $("#description").val()
+        const category= $("#category").val()
+        const due_date= $("#due_date").val()
+        const id= $("#id").val()
+        $.ajax({
+        url: "http://localhost:3000/todo",
+        type: 'put',
+        success: function(result) {
+         title = title
+         description= description
+         category= category
+         due_date= due_date
+         id= id;
+
+    }
+});
+ }
+        
+
+        
+
+    
+    </script>
 </body>
 
 </html>
