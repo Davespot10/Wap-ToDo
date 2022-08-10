@@ -14,9 +14,7 @@ const userSchema = new Schema({
     required: true
   },
 
-  token: {
-    type: Object
-  }
+  
 });
 
 const User = mongoose.model("User", userSchema);
