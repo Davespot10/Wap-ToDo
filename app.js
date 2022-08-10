@@ -14,6 +14,7 @@ let completedtaskRoute=require("./routes/completedtask")
 let pendingtaskRoute=require("./routes/pendingtask")
 let deletedtaskRoute=require("./routes/deletedtask")
 let addTaskRoute=require("./routes/addtask")
+let updateRouter = require("./routes/update")
 const Todo = require("./models/todo");
 
 const todo = Todo.find({});
@@ -72,17 +73,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(loginRoute);
 
-app.use((req, res, next) => {
-  if (req.cookies.currentUser == undefined) {
-    res.redirect("/login");
-    return;
-  }
-  next();
 
-})
 
 app.use('/', indexRouter);
 app.use('/todo',todoRouter);
+app.use("/todo/update", updateRouter);
 app.use('/users', usersRouter);
 app.use('/item', itemRouter);
 

@@ -20,7 +20,6 @@ router.post("/postlogin", async (req, res) => {
     )
   ) {
     res.cookie("currentUser", req.body.username + "," + req.body.password);
-
     res.redirect("/homepage");
   } else {
     res.redirect("/login");
@@ -35,4 +34,8 @@ router.post("/postsignup", (req, res) => {
   res.redirect("/login");
 });
 
-module.exports = router;
+
+
+//jwt.io/#debugger-io?token=eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Ik1lcmhhIEF5ZWxlIiwiaWF0IjoxNTE2MjM5MDIyfQ.PeXrOEB16HinSXibSJqkvJ_j-Rg0VQHbeap9gc6GDsJlVkcLHWmCcy6aA6wiKSfe
+
+https: module.exports = router;

@@ -1,13 +1,16 @@
 const express = require("express");
 const { default: mongoose, model } = require("mongoose");
 const router = express.Router();
-const Todo = require("../routes/todo");
+const Todo = require("../models/todo");
 
 
 
-router.put("/status", (req, res) => {
+router.put("/update/todo", (req, res) => {
+    let id = req.body.id;
+    let category = 
+    let
   Todo.updateOne(
-    { title: req.body.title, userId: req.cookies.currentUser.split(",")[0] },
+    { _id: id, userId: req.cookies.currentUser.split(",")[0] },
     { status: req.body.status }
   )
     .then((data) => {
@@ -19,9 +22,12 @@ router.put("/status", (req, res) => {
 });
 
 router.put("/title", (req, res) => {
-  let title = req.body.title;
+  let id = req.body.id;
   let userId = req.cookies.currentUser.split(",")[0];
-  Todo.updateOne({ _id: todoId, userId: userId }, { title: req.body.title })
+  Todo.updateOne(
+    { _id: id, userId: userId },
+    { title: req.body.title, category: req.body.category ,}
+  )
     .then((data) => {
       res.send(data);
     })
@@ -33,7 +39,11 @@ router.put("/title", (req, res) => {
 router.put("/category", (req, res) => {
   let id = req.body.id;
   let userId = req.cookies.currentUser.split(",")[0];
-  Todo.updateOne({ _id: id, userId: userId }, { category: req.body.category })
+  Todo.updateOne(
+    { _id: id, userId: userId },
+    { category: req.body.category },
+    { description: req.body.description }
+  )
     .then((data) => {
       res.send(data);
     })
@@ -57,4 +67,4 @@ router.put("/description", (req, res) => {
     });
 });
 
-model.exports == router;
+module.exports = router;
