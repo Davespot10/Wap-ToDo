@@ -6,25 +6,22 @@ const Todo = require("../models/todo");
 router.get("/", function (req, res, next) {
 
 
-  // if(req.cookies.currentUser == undefined){
-  //   res.redirect('/login')
-  //   return
-  // }
+  let userId = req.cookies.currentUser;
+  Todo.find({ userId: userId }).then((data) => {
+    if (req.cookies.currentUser == undefined) {
+      res.redirect("/login");
+      return;
+    }
 
-  // let userId = req.cookies.currentUser.split(',')[0]
-  Todo.find({userId:'merha'}).then(data =>{  if(req.cookies.currentUser == undefined){
-    res.redirect('/login')
-    return;
-  }
-
-  let userId = req.cookies.currentUser.split(',')[0];
-  Todo.find({userId:userId}).then(data =>{
-
-    res.send(data);
-  }).catch((err)=>{
-    res.send(err);
-  })
-});
+    let userId = req.cookies.currentUser.split(",")[0];
+    Todo.find({ userId: userId })
+      .then((data) => {
+        res.send(data);
+      })
+      .catch((err) => {
+        res.send(err);
+      });
+  });
 });
 
 
@@ -37,7 +34,6 @@ if(req.cookies.currentUser == undefined){
   let userId = req.cookies.currentUser.split(',')[0];
   Todo.find({ userId: userId }).then((data)=>{
     const doc = new Todo();
-
     doc.userId = req.body.userId;
     doc.description = req.body.description;
     doc.title = req.body.title;
