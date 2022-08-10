@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%-include("./partials/head.ejs") %>
+<%-include('./partials/head.ejs') %>
 
 
 
@@ -10,7 +10,7 @@
         <div id="outer" class="aa">
 
 
-            <%-include("./partials/div.ejs") %>
+            <%-include('./partials/div.ejs') %>
 
                 <div id="middle">
                     <form class="container">
@@ -41,13 +41,13 @@
                                     <div id="middlebody">
                                         <div id="sportstudy">
                                             <div id="middlebody1">
-                                                <div id="todo_catagory">
+                                                <div id="todo_category">
                                                     <h1>&nbsp; Sports</h1>
 
                                                 </div>
-                                                <div class="catagory">
+                                                <div class="category">
                                                     <% for(let i=0;i<todo.length;i++){ %>
-                                                        <% if(todo[i].catagory=="sport" &&todo[i].status=="done" ){ %>
+                                                        <% if(todo[i].category=="sport" &&todo[i].status=="done" ){ %>
                                                             <% countsport=countsport+1 %>
 
                                                                 <div style="font-size:large;" id="tasks">
@@ -91,13 +91,13 @@
                                             <div id="middlebody1">
 
 
-                                                <div id="todo_catagory">
+                                                <div id="todo_category">
                                                     <h1>&nbsp; Study</h1>
 
                                                 </div>
-                                                <div class="catagory">
+                                                <div class="category">
                                                     <% for(let i=0;i<todo.length;i++){ %>
-                                                        <% if(todo[i].catagory=="study" &&todo[i].status=="done" ){ %>
+                                                        <% if(todo[i].category=="study" &&todo[i].status=="done" ){ %>
                                                             <% countstudy=countstudy+1 %>
 
                                                                 <div style="font-size:large;" id="tasks">
@@ -140,13 +140,13 @@
 
                                         <div id="shoopingtravel">
                                             <div id="middlebody1">
-                                                <div id="todo_catagory">
+                                                <div id="todo_category">
                                                     <h1>&nbsp; Shopping</h1>
 
                                                 </div>
-                                                <div class="catagory">
+                                                <div class="category">
                                                     <% for(let i=0;i<todo.length;i++){ %>
-                                                        <% if(todo[i].catagory=="shopping" &&todo[i].status=="done" ){
+                                                        <% if(todo[i].category=="shopping" &&todo[i].status=="done" ){
                                                             %>
                                                             <% countshopping=countshopping+1 %>
 
@@ -185,13 +185,13 @@
                                             </div>
                                             <br>
                                             <div id="middlebody1">
-                                                <div id="todo_catagory">
+                                                <div id="todo_category">
                                                     <h1>&nbsp; Travel</h1>
 
                                                 </div>
-                                                <div class="catagory">
+                                                <div class="category">
                                                     <% for(let i=0;i<todo.length;i++){ %>
-                                                        <% if(todo[i].catagory=="travel" &&todo[i].status=="done" ){ %>
+                                                        <% if(todo[i].category=="travel" &&todo[i].status=="done" ){ %>
                                                             <% counttravel=counttravel+1 %>
 
                                                                 <div style="font-size:large;" id="tasks">
@@ -235,9 +235,9 @@
                 <div id="username">
                     <h4>WellCome User</h4>
                 </div>
-                <form action="/postLogout" method="POST" >
-            <button id="logout">Logout</button>
-        </form>
+                <form action="/postLogout" method="POST">
+                    <button id="logout">Logout</button>
+                </form>
                 <div id="accountphoto">
 
                     <i style="font-size: 50px;" class="bi bi-person-circle"></i>

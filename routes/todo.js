@@ -37,12 +37,12 @@ if(req.cookies.currentUser == undefined){
     doc.userId = req.body.userId;
     doc.description = req.body.description;
     doc.title = req.body.title;
-    doc.status = req.body.status;
+    doc.status = "pending";
     doc.category = req.body.category;
     doc.due_date = req.body.due_date;
 
     doc.save();
-    res.send(doc);
+    res.redirect("/homepage");
   }).catch((err)=>{
     res.send(err);
   });

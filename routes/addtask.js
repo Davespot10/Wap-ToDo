@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/addtask', function(req, res, next) {
 
-    res.render('addtask.ejs', { title: 'Add Task', todo });
+    res.render('addtask.ejs', { title: 'Add Task'});
   });
 
   router.post('/posttask', function(req, res, next) {
