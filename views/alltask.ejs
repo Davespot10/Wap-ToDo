@@ -64,6 +64,11 @@
                                                                 <%= todo[i].due_date %>
                                                             </p>
                                                         </a>
+                                                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                           <a href=""><button type="button" class="btn btn-danger">Delete</button></a> 
+                                                           <a href="/edittask/<%=todo[i]._id%>"><button type="button" class="btn btn-warning">Edit</button></a>   
+                                                           <a href=""><button type="button" class="btn btn-success">Done</button></a>    
+                                                        </div>
                                                     </div>
 
 
