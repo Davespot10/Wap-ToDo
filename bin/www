@@ -13,6 +13,7 @@ var http = require('http');
  */
 
 var port = normalizePort(process.env.PORT || '3000');
+const TOKEN_SECRET= "aff4c949636f59083476a2ec64ad167b462eb7abeb2cf6d11bfc77b2e970931db96035dba90e33b800c0bc612ec0f6fbaccec4240d01180b31942f222229a844"
 app.set('port', port);
 
 /**

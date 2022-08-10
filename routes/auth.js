@@ -12,18 +12,15 @@ router.use("/", async (req, res, next) => {
 
     const token = req.cookies.currentUser;
 
-
-
-
     if (token) {
 
         jwt.verify(token, TOKEN_SECRET, function (err, decoded){
-
+            console.log("22222");
             if (err){
-                console.log("Token not valid : Error thrown ");
+                console.log("Token validation not successful ",err);
                 res.redirect("login")
             } else {
-                console.log("Token is valid");
+                console.log("Token validation  successful");
 
                 next()
             }
@@ -33,7 +30,7 @@ router.use("/", async (req, res, next) => {
 
     else {
 
-    res.send("no token")
+    res.redirect("login")
     }
 
    // let data = await user.find( {"userId": userInToken.valueOf("").userId });

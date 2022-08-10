@@ -2,11 +2,17 @@
 <html lang="en">
 
     <%-include("./partials/head.ejs") %>
-
+<!-- <form class="example" >
+    <label>TASKS</label>
+    <input type="text" placeholder="Search.." name="search2">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form> -->
 
 <body>
 
     <div id="outer" class="aa">
+
+
         <%-include("./partials/div.ejs") %> 
 
         <div id="middle">
@@ -29,8 +35,16 @@
             </form>
             <br>
             <br>
-            <h2 style="text-align: center;"> <i><b>All Tasks!!!</b></i> </h2>
-        
+            <h2 style="text-align: center;"> <i><b>Delated Tasks!!!</b></i> </h2>
+            <!-- // title:"Study Wap",
+                    //description:"Plan to study Jquery and Dom Manipulation",
+                    //plannedDate:"09-08-2022",
+                    //catagory:"travel,sport,study,shopping"
+                    //status:"pending,done,delated" -->
+            <!-- for( let i=0;i<todo.length;i++){
+                if(todo[i].status==)
+            }      
+         -->
             <% let countstudy=0; %>
                 <% let countshopping=0; %>
                     <% let counttravel=0; %>
@@ -45,7 +59,7 @@
                                         </div>
                                         <div class="catagory">
                                             <% for(let i=0;i<todo.length;i++){ %>
-                                                <% if(todo[i].catagory=="sport" ){ %>
+                                                <% if(todo[i].catagory=="sport"&&todo[i].status=="delated"   ){ %>
                                                     <% countsport=countsport+1 %>
     
                                                         <div style="font-size:large;" id="tasks">
@@ -91,7 +105,7 @@
                                         </div>
                                         <div class="catagory">
                                             <% for(let i=0;i<todo.length;i++){ %>
-                                                <% if(todo[i].catagory=="study" ){ %>
+                                                <% if(todo[i].catagory=="study"&&todo[i].status=="delated"   ){ %>
                                                     <% countstudy=countstudy+1 %>
 
                                                         <div style="font-size:large;" id="tasks">
@@ -113,7 +127,7 @@
                                                             <% } %>
                                                                 <% if(todo.length==0||countstudy==0){ %>
                                                                     <h2 class="notodo"> SORRY!!! There is no task to display...
-                                                                        diplay...
+                                                                       
                                                                     </h2>
 
                                                                     <%} %>
@@ -136,7 +150,7 @@
                                         </div>
                                         <div class="catagory">
                                             <% for(let i=0;i<todo.length;i++){ %>
-                                                <% if(todo[i].catagory=="shopping" ){ %>
+                                                <% if(todo[i].catagory=="shopping"&&todo[i].status=="delated"  ){ %>
                                                     <% countshopping=countshopping+1 %>
     
                                                         <div style="font-size:large;" id="tasks">
@@ -151,7 +165,7 @@
                                                             </p>
                                                             <p class="due_date"><label for=""><b>
                                                                 due_date:</b></label>
-                                                                <%= todo[i].due_date%>
+                                                                <%= todo[i].due_date %>
                                                             </p>
                                                         </div>
                                                         <% }%>
@@ -176,7 +190,7 @@
                                         </div>
                                         <div class="catagory">
                                             <% for(let i=0;i<todo.length;i++){ %>
-                                                <% if(todo[i].catagory=="travel" ){ %>
+                                                <% if(todo[i].catagory=="travel"&&todo[i].status=="delated"   ){ %>
                                                     <% counttravel=counttravel+1 %>
     
                                                         <div style="font-size:large;" id="tasks">

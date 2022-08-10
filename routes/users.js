@@ -13,6 +13,7 @@ router.get('/', function(req, res, next) {
     .catch((err)=> {
       res.send(err);
     })
+
   });
   
 
@@ -37,7 +38,7 @@ router.post('/addUser', (req, res) => {
 
   doc.save()
 
-  res.send('user saved succesfully')
+  res.redirect("/login")
 
 
 });

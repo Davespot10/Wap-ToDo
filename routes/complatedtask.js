@@ -1,9 +1,9 @@
 var express = require('express');
 const Todo = require('../models/todo');
 var router = express.Router();
-router.get('/completedtask', function(req, res, next) {
+router.get('/complatedtask', function(req, res, next) {
   Todo.find().sort({createdTime:-1}).then((result)=>{
-    res.render('completedtask.ejs', { title: 'completed',todo:result})
+    res.render('complatedtask.ejs', { title: 'Complated',todo:result})
 
   })
   .catch(()=>{

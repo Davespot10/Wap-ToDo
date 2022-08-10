@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/homepage', function(req, res, next) {
     
     
-    res.render("homepage.ejs",{title:"Hompage"});
+    res.render("homepage.ejs",{title:"Hompage",todo});
 })
 
 
