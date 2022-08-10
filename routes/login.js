@@ -13,6 +13,7 @@ router.get("/signup", (req, res) => {
   res.render("signup.ejs");
 });
 router.post("/postlogin", async (req, res) => {
+  console.log("incoming",req.body);
   let data = await user.find();
 
   if (
@@ -37,9 +38,10 @@ router.post("/postlogin", async (req, res) => {
           const error = new Error("Error! Something went wrong in token creation");
          res.send(error)
       }
-
+      console.log(userToken);
       res.cookie("currentUser", userToken);
-    res.redirect("/homepage");
+      res.end('success')
+    // res.redirect("/homepage");
 
   } else {
 

@@ -22,8 +22,8 @@ router.post('/addUser', (req, res) => {
   console.log("requested body: ",req.body);
   console.log('in add user')
 
-  let userEmail = req.body.username;
-  let userPassword = req.body.password;
+  let email = req.body.email;
+  let password = req.body.password;
 
   if(req.body== null || req.body== undefined){
 
@@ -32,8 +32,8 @@ router.post('/addUser', (req, res) => {
 
 
   const doc = new user();
-  doc.userId = req.body.email;
-  doc.password = req.body.password;
+  doc.userId = email;
+  doc.password = password;
 
 
   doc.save()
