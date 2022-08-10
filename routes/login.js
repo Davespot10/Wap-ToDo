@@ -22,24 +22,27 @@ router.post("/postlogin", async (req, res) => {
         user.userId === req.body.username && user.password === req.body.password
     )
   ) {
-    let userToken;
 
-    try {
-      //Creating jwt token
-      userToken = jwt.sign(
-        { userId: req.body.username, password: req.body.password },
-        TOKEN_SECRET,
-        { expiresIn: "1h" }
-      );
-    } catch (err) {
-      console.log(err);
-      const error = new Error("Error! Something went wrong in token creation");
-      res.send(error);
-    }
-    console.log(userToken);
-    res.cookie("currentUser", userToken);
-    // res.end('success')
+      let userToken;
+
+      try {
+          //Creating jwt token
+          userToken = jwt.sign(
+              {userId: req.body.username, password: req.body.password},
+              TOKEN_SECRET,
+              {expiresIn: "1h"}
+          );
+
+      } catch (err) {
+          console.log(err);
+          const error = new Error("Error! Something went wrong in token creation");
+         res.send(error)
+      }
+      console.log(userToken);
+      res.cookie("currentUser", userToken);
+      // res.end('success')
     res.redirect("/homepage");
+
   } else {
     res.redirect("/login");
   }
