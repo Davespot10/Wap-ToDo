@@ -40,8 +40,8 @@ router.post("/postlogin", async (req, res) => {
       }
       console.log(userToken);
       res.cookie("currentUser", userToken);
-      res.end('success')
-    // res.redirect("/homepage");
+      // res.end('success')
+    res.redirect("/homepage");
 
   } else {
 

@@ -4,8 +4,13 @@ const router = express.Router();
 const Todo = require("../models/todo");
 var jwt = require('jwt-decode')
 var jwtsign = require('jsonwebtoken')
+var cors = require('cors')
 
 var url = require('url')
+
+router.use(cors({
+  origin:'*'
+}))
 
 router.get("/", function (req, res, next) {
 
@@ -13,13 +18,16 @@ router.get("/", function (req, res, next) {
   // var tirki = jwtsign.sign({name:'merha'},'secret')
   // console.log("token",tirki);
 
-  let token = req.cookies.currentUser;
+  let token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJtZXJoYSIsInBhc3N3b3JkIjoibWVyc2giLCJpYXQiOjE2NjAxNTk1MTMsImV4cCI6MTY2MDE2MzExM30.jayuacvzb9Hw1IigEUZR_pZwmCi2HUC7HhQGBdI9qlM";
+  console.log("current", token);
   var decodeToken = jwt(token);
+  
   Todo.find({ userId: decodeToken.userId }).then((data) => {
-    if (req.cookies.currentUser == undefined) {
-      res.redirect("/login");
-      return;
-    }
+    // if (req.cookies.currentUser == undefined) {
+    //   res.redirect("/login");
+    //   return;
+    // }
 
     // let userId = req.cookies.currentUser.split(",")[0];
     Todo.find({ userId: decodeToken.userId })
@@ -34,15 +42,17 @@ router.get("/", function (req, res, next) {
 
 
 router.post("/", (req, res) => {
+  // let token =
+  //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJtZXJoYSIsInBhc3N3b3JkIjoibWVyc2giLCJpYXQiOjE2NjAxNTk1MTMsImV4cCI6MTY2MDE2MzExM30.jayuacvzb9Hw1IigEUZR_pZwmCi2HUC7HhQGBdI9qlM";
+  // console.log("current", token);
   
-if(req.cookies.currentUser == undefined){
-  res.redirect('/login')
-  return;
-}
-  let userId = req.cookies.currentUser.split(',')[0];
-  Todo.find({ userId: userId }).then((data)=>{
+
+  let token = req.cookies.currentUser;
+  var decodeToken = jwt(token);
+  Todo.find({ userId: decodeToken.userId }).then((data)=>{
+    // console.log(req.body);
     const doc = new Todo();
-    doc.userId = req.body.userId;
+    doc.userId = decodeToken.userId;
     doc.description = req.body.description;
     doc.title = req.body.title;
     doc.status = "pending";
@@ -58,8 +68,8 @@ if(req.cookies.currentUser == undefined){
 
 
 router.put('/', (req, res) =>{
-  var params = url.parse(req.query);
-  console.log(params);
+  // var params = url.parse(req.query);
+  // console.log(params);
   description = req.body.description;
   title = req.body.title;
   category = req.body.category;
@@ -88,46 +98,6 @@ router.put('/', (req, res) =>{
 
 
 
-// router.put('/update/title',(req,res)=>{
-//   let todoId = req.body.id;
-//   let userId = req.cookies.currentUser.split(",")[0];
-//   Todo.updateOne({ _id: todoId, userId: userId },{title : req.body.title}).then((data)=>{
-//     res.send(data);
-//   }).catch((err)=>{
-//     res.send(err);
-//   });
-// })
-
-
-// router.put("/update/category", (req, res) => {
-//   let todoId = req.body.id;
-//   let userId = req.cookies.currentUser.split(",")[0];
-//   Todo.updateOne(
-//     { _id: todoId, userId: userId },
-//     { category: req.body.category }
-//   )
-//     .then((data) => {
-//       res.send(data);
-//     })
-//     .catch((err) => {
-//       res.send(err);
-//     });
-// });
-
-// router.put("/update/description", (req, res) => {
-//   let todoId = req.body.id;
-//   let userId = req.cookies.currentUser.split(",")[0];
-//   Todo.updateOne(
-//     { _id: todoId, userId: userId },
-//     { description: req.body.description }
-//   )
-//     .then((data) => {
-//       res.send(data);
-//     })
-//     .catch((err) => {
-//       res.send(err);
-//     });
-// });
 
 
 router.delete("/", (req, res) => {

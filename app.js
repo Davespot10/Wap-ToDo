@@ -55,7 +55,7 @@ app.set('view engine', 'ejs');
 
 app.use('/css', express.static('public/stylesheets'));
 app.use(cors({
-  allowOrigin: '*'
+  origin: '*'
 }))
 
 app.use(logger('dev'));
