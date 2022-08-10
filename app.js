@@ -14,7 +14,12 @@ let complatedtaskRoute=require("./routes/complatedtask")
 let pendingtaskRoute=require("./routes/pendingtask")
 let delatedtaskRoute=require("./routes/delatedtask")
 let addTaskRoute=require("./routes/addtask")
+
+const cors = require('cors')
+
+
 let editRoute = require('./routes/edit')
+
 
 
 
@@ -49,7 +54,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use('/css', express.static('public/stylesheets'));
-
+app.use(cors({
+  allowOrigin: '*'
+}))
 
 app.use(logger('dev'));
 app.use(express.json());
