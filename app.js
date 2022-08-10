@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const fetch = require('node-fetch')
-
+const authRoute= require('./routes/auth')
 const mongoose = require("mongoose");
 var user = require('./models/user');
 let loginRoute=require("./routes/login")
@@ -73,6 +73,7 @@ app.use('/todo',todoRouter);
 app.use('/users', usersRouter);
 app.use('/item', itemRouter);
 app.use(loginRoute)
+app.use('/*',authRoute)
 app.use(hompageRoute)
 app.use(alltaskRoute)
 app.use(complatedtaskRoute)
