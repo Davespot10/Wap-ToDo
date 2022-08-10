@@ -238,18 +238,17 @@
 
             <h2 style="text-align: center;"> <i><b>Planning means looking ahead!!!</b></i> </h2>
 
-            <form action="/posttask" method="POST" id="middlebody">
+            <form action="/todo" method="POST" id="middlebody">
                 <h2>Title</h2><input id="addform" type="text" name="title">
 
 
                 <h2>category</h2>
                 <select id="addform" name="category" id="">
-                    <option value="">sport</option>
-                    <option value="">study</option>
-                    <option value="">shopping</option>
-                    <option value="">travel</option>
+                    <option value="sport">sport</option>
+                    <option value="study">study</option>
+                    <option value="shopping">shopping</option>
+                    <option value="travel">travel</option>
                 </select>
-                <h2>Status</h2> <input name="status" id="addform" type="pending" value="inprogress" name="inprogress">
                 <h2>Due Date</h2> <input name="due_date" id="addform" type="due_date">
                 <br>
                 <h2>Discription</h2>
