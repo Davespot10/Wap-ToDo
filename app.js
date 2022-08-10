@@ -16,7 +16,17 @@ let delatedtaskRoute=require("./routes/delatedtask")
 let addTaskRoute=require("./routes/addtask")
 
 
-
+todo=[
+  {title:"Study Wap",description:"Plan to study Jquery and Dom Manipulation",due_date:"09-08-2022",catagory:"travel",status:"pending"},
+  {title:"Study MPP",description:"Plan to study Inheritance",due_date:"12-08-2022",catagory:"study",status:"pending"},
+  {title:"Study EA",description:"Plan to study JPA",due_date:"09-01-2022",catagory:"shopping",status:"pending"},
+  {title:"Study Wap",description:"Plan to study Jquery and Dom Manipulation",due_date:"09-08-2022",catagory:"travel",status:"pending"},
+  {title:"Study MPP",description:"Plan to study Inheritance",due_date:"12-08-2022",catagory:"study",status:"pending"},
+  {title:"Study EA",description:"Plan to study JPA",due_date:"09-01-2022",catagory:"sport",status:"pending"},
+  {title:"Study Wap",description:"Plan to study Jquery and Dom Manipulation",due_date:"09-08-2022",catagory:"travel",status:"pending"},
+  {title:"Study MPP",description:"Plan to study Inheritance",due_date:"12-08-2022",catagory:"travel",status:"pending"},
+  {title:"Study EA",description:"Plan to study JPA",due_date:"09-01-2022",catagory:"study",status:"done"}
+]
 
 
 
@@ -25,7 +35,7 @@ let addTaskRoute=require("./routes/addtask")
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var itemRouter = require('./routes/item');
-var todoRouter = require('./routes/todo')
+var todoRouter = require('./routes/todo');
 
 
 
