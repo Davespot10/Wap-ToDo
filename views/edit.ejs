@@ -174,37 +174,37 @@
 
 
         <div id="leftbar">
-            <a href="homepage">
+            <a href="../homepage">
                 <h3 id="task">TASK</h3>
             </a>
 
-            <a href="addtask">
+            <a href="../addtask">
                 <div id="todolist">
                     <i class="bi bi-file-earmark-plus-fill" style="font-size: 50px;"></i>
                     <p>Add New Task</p>
                 </div>
             </a>
-            <a href="alltask">
+            <a href="../alltask">
                 <div id="todolist">
                     <i class="bi bi-list-task" style="font-size: 50px;"></i>
                     <p>All Tasks</p>
                 </div>
             </a>
-            <a href="pendingtask">
+            <a href="../pendingtask">
 
 
-                <div id="pending">
+                <div id="../pending">
                     <i style="font-size: 50px;" class="bi bi-alarm-fill"></i>
                     <p>Task Pending</p>
                 </div>
             </a>
-            <a href="complatedtask">
+            <a href="../complatedtask">
                 <div id="complated">
                     <i style="font-size: 50px;" class="bi bi-check2-circle"></i>
                     <p>Task Complated</p>
                 </div>
             </a>
-            <a href="delatedtask">
+            <a href="../delatedtask">
                 <div id="delated">
                     <i style="font-size: 50px;" class="bi bi-trash3-fill"></i>
                     <p>Task Delated</p>
@@ -238,22 +238,22 @@
 
             <h2 style="text-align: center;"> <i><b>Planning means looking ahead!!!</b></i> </h2>
 
-            <form action="/todo" method="POST" id="middlebody">
-                <h2>Title</h2><input id="addform" type="text" name="title">
+            <form action="/todo" method="Put" id="middlebody">
+                <h2>Title</h2><input id="addform" type="text" name="title" value= "<%= todo.title%>" >
 
 
                 <h2>category</h2>
-                <select id="addform" name="category" id="">
+                <select id="addform" value="<%= todo.category %>" name="category" id="" >
                     <option value="sport">sport</option>
                     <option value="study">study</option>
                     <option value="shopping">shopping</option>
                     <option value="travel">travel</option>
                 </select>
-                <h2>Due Date</h2> <input name="due_date" id="addform" type="due_date">
+                <h2>Due Date</h2> <input name="due_date" id="addform" type="due_date" value="<%= todo.due_date %>">
                 <br>
                 <h2>Discription</h2>
                 <textarea placeholder="Insert Your Task Discreption here" name="description" id="" cols="60"
-                    rows="10"></textarea>
+                    rows="10"><%= todo.description %></textarea>
                 <br>
                 <button id="submitbutton">Submit</button>
             </form>

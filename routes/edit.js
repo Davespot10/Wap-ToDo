@@ -12,7 +12,7 @@ router.get('/edittask', function(req, res, next) {
   });
   router.get('/edittask/:id',(req,res)=>{
    
-    const id=req.body.id;
+    const id=req.params.id;
     console.log("set id",id);
     Todo.findById(id)
     .then(result=>{
