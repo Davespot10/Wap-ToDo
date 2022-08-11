@@ -93,7 +93,7 @@
 
 
 
-       
+
 
 
         #middlebody {
@@ -374,8 +374,9 @@
 
 
         <div id="leftbar">
-            <a  href="../homepage">
-                <img style="margin-left: 5rem; margin-top:1rem;padding-bottom: 0.5rem;"  id=""task src="../images/favicon.ico" alt="ssss">
+            <a href="../homepage">
+                <img style="margin-left: 5rem; margin-top:1rem;padding-bottom: 0.5rem;" id="" task
+                    src="../images/favicon.ico" alt="ssss">
             </a>
 
             <a style="color: white" href="../addtask">
@@ -421,8 +422,10 @@
 
                         <div class="search">
                             <i class="fa fa-search"></i>
-                            <input style="border:1px gray solid;" type="text" class="form-control" placeholder="Search Your Task Here">
-                            <button style="background-color: rgba(255, 255, 255, 0.629); color: black;" class="btn btn-primary">Search</button>
+                            <input style="border:1px gray solid;" type="text" class="form-control"
+                                placeholder="Search Your Task Here">
+                            <button style="background-color: rgba(255, 255, 255, 0.629); color: black;"
+                                class="btn btn-primary">Search</button>
                         </div>
 
                     </div>
@@ -447,12 +450,18 @@
                         <h2 id="formnames">category</h2>
                     </div>
                 </div>
-                <select value="<%= todo.category %>" style="margin-left: auto;" id="addform" name="category"
-                    class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                    <option value="sport">sport</option>
-                    <option value="study">study</option>
-                    <option value="shopping">shopping</option>
-                    <option value="travel">travel</option>
+    
+
+                
+                <select value=<%=todo.category%> style="margin-left: auto;" id="addform"
+                    name="category" class="form-select form-select-lg mb-3 category"
+                    aria-label=".form-select-lg example">
+                    <% category.forEach(o => { %>
+                        <% if(o == todo.category) { %>
+                         <option value=<%= o %> selected> <%= o %> </option>
+                      <% } else {%> 
+                        <option value=<%= o %>> <%= o %> </option>
+                  <%  }}) %> 
                 </select>
                 <h2 id="formnames">Due Date</h2>
                 <input value="<%= todo.due_date %>" name="due_date" id="addform" type="date" class="form-control"
@@ -462,8 +471,7 @@
 
                 <div class="form-floating">
                     <textarea name="description" class="form-control"
-                        placeholder="Insert Your Task Discreption here(500 max length )" id="floatingTextarea2"
-                        style="height: 10rem;width: 70rem; margin-left: 37.5rem;border-radius: 3rem;background-color: rgba(77, 71, 71, 0.935);
+                        placeholder="Insert Your Task Discreption here(500 max length )" id="floatingTextarea2" style="height: 10rem;width: 70rem; margin-left: 37.5rem;border-radius: 3rem;background-color: rgba(77, 71, 71, 0.935);
                         color: white;"><%= todo.description %></textarea>
                 </div>
                 <button onclick="update()" id="submitbutton" style="width: 8rem;height: 4rem;" class="btn btn-primary"
@@ -488,13 +496,19 @@
 
 
     <script>
+        console.log("Edit here.................");
+        console.log(todo);
         function update() {
-            let title = $('#title').val();
-            let description = $("#description").val()
-            let category = $("#category").val()
-            let due_date = $("#due_date").val()
+
+            let title = $("input[name='title']").val();
+            let description = $("textarea").val()
+            // var selectedVal = $("#myselect option:selected").val();
+            // $("#description").val()
+            // let category = $("input[name='category']:selected").val()
+            let category = $(".category option:selected").val()
+            let due_date = $("input[name='due_date']").val()
             let id = $(location).attr('pathname').split('/')[2]
-            console.log(title, description, category, due_date, id);
+            console.log("All Val......", title, description, category, due_date, id);
             $.ajax({
                 url: "http://localhost:3000/todo",
                 type: 'put',
@@ -506,7 +520,6 @@
                     id: id
                 },
                 success: function (result) {
-                    console.log(title, description, category, due_date, id);
                     title = title
                     description = description
                     category = category
