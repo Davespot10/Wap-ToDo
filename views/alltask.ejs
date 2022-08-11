@@ -47,9 +47,10 @@
                                                     <% for(let i=0;i<todo.length;i++){ %>
                                                         <% if(todo[i].category=="sport" ){ %>
                                                             <% countsport=countsport+1 %>
-                                                                <a class="editedContainer"
-                                                                    href="/edittask/<%=todo[i]._id%>">
-                                                                    <div style="font-size:large;" id="tasks">
+                                                            
+
+                                                                <div id="editedContainer" href="/edittask/<%=todo[i]._id%>">
+                                                                    <div  style="font-size:large;" id="tasks">
 
                                                                         <h3><b>plan <%=countsport %>
                                                                         </h3></b></h3>
@@ -66,14 +67,16 @@
                                                                                     due_date:</b></label>
                                                                             <%= todo[i].due_date %>
                                                                         </p>
-                                                                </a>
-                                                                <div class="btn-group" role="group"
+                                                                    </div>
+
+                                                                <div class="btn-group statusbutton" role="group"
                                                                     aria-label="Basic mixed styles example">
                                                                     <!-- <a  href=""> -->
                                                                     <button value=<%=todo[i]._id%>
                                                                         onclick="deleteItem(event.target.value)"
                                                                         type="button" class="btn
                                                                         btn-danger">Delete</button>
+                                                                        &nbsp;
                                                                     <!-- </a>  -->
                                                                     <a href="/edittask/<%=todo[i]._id%>"><button
                                                                             type="button"
@@ -81,7 +84,7 @@
                                                                     <a href=""><button type="button"
                                                                             class="btn btn-success">Done</button></a>
                                                                 </div>
-                                                </div>
+                                                             </div>
 
 
                                                 <% }%>
