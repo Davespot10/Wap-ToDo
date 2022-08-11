@@ -118,13 +118,17 @@
                                                     <% if(todo[i].category=="study" ){ %>
                                                         <% countstudy=countstudy+1 %>
 
-                                                            <div style="font-size:large;" id="tasks">
-                                                                <h3><b>plan <%=countstudy %>
+                                                        <div id="editedContainer" href="/edittask/<%=todo[i]._id%>">
+                                                            <div  style="font-size:large;" id="tasks">
+
+                                                                <h3><b>plan <%=countsport %>
                                                                 </h3></b></h3>
-                                                                <p class="title"> <label for=""> <b>Title:</b> </label>
+                                                                <p class="title"> <label for=""> <b>Title:</b>
+                                                                    </label>
                                                                     <%= todo[i].title %>
                                                                 </p>
-                                                                <p class="description"><label for=""><b>Description:</b>
+                                                                <p class="description"><label
+                                                                        for=""><b>Description:</b>
                                                                     </label>
                                                                     <%= todo[i].description %>
                                                                 </p>
@@ -133,6 +137,23 @@
                                                                     <%= todo[i].due_date %>
                                                                 </p>
                                                             </div>
+
+                                                        <div class="btn-group statusbutton" role="group"
+                                                            aria-label="Basic mixed styles example">
+                                                            <!-- <a  href=""> -->
+                                                            <button value=<%=todo[i]._id%>
+                                                                onclick="deleteItem(event.target.value)"
+                                                                type="button" class="btn
+                                                                btn-danger">Delete</button>
+                                                                &nbsp;
+                                                            <!-- </a>  -->
+                                                            <a href="/edittask/<%=todo[i]._id%>"><button
+                                                                    type="button"
+                                                                    class="btn btn-warning">Edit</button></a>
+                                                            <a href=""><button type="button"
+                                                                    class="btn btn-success">Done</button></a>
+                                                        </div>
+                                                     </div>
                                                             <% }%>
                                                                 <% } %>
                                                                     <% if(todo.length==0||countstudy==0){ %>
@@ -164,21 +185,42 @@
                                                     <% if(todo[i].category=="shopping" ){ %>
                                                         <% countshopping=countshopping+1 %>
 
-                                                            <div style="font-size:large;" id="tasks">
-                                                                <h3><b>plan <%=countshopping %>
+                                                        <div id="editedContainer" href="/edittask/<%=todo[i]._id%>">
+                                                            <div  style="font-size:large;" id="tasks">
+
+                                                                <h3><b>plan <%=countsport %>
                                                                 </h3></b></h3>
-                                                                <p class="title"> <label for=""> <b>Title:</b> </label>
+                                                                <p class="title"> <label for=""> <b>Title:</b>
+                                                                    </label>
                                                                     <%= todo[i].title %>
                                                                 </p>
-                                                                <p class="description"><label for=""><b>Description:</b>
+                                                                <p class="description"><label
+                                                                        for=""><b>Description:</b>
                                                                     </label>
                                                                     <%= todo[i].description %>
                                                                 </p>
                                                                 <p class="due_date"><label for=""><b>
                                                                             due_date:</b></label>
-                                                                    <%= todo[i].due_date%>
+                                                                    <%= todo[i].due_date %>
                                                                 </p>
                                                             </div>
+
+                                                        <div class="btn-group statusbutton" role="group"
+                                                            aria-label="Basic mixed styles example">
+                                                            <!-- <a  href=""> -->
+                                                            <button value=<%=todo[i]._id%>
+                                                                onclick="deleteItem(event.target.value)"
+                                                                type="button" class="btn
+                                                                btn-danger">Delete</button>
+                                                                &nbsp;
+                                                            <!-- </a>  -->
+                                                            <a href="/edittask/<%=todo[i]._id%>"><button
+                                                                    type="button"
+                                                                    class="btn btn-warning">Edit</button></a>
+                                                            <a href=""><button type="button"
+                                                                    class="btn btn-success">Done</button></a>
+                                                        </div>
+                                                     </div>
                                                             <% }%>
                                                                 <% } %>
                                                                     <% if(todo.length==0||countshopping==0){ %>
@@ -205,13 +247,17 @@
                                                     <% if(todo[i].category=="travel" ){ %>
                                                         <% counttravel=counttravel+1 %>
 
-                                                            <div style="font-size:large;" id="tasks">
-                                                                <h3><b>plan <%=counttravel %>
+                                                        <div id="editedContainer" href="/edittask/<%=todo[i]._id%>">
+                                                            <div  style="font-size:large;" id="tasks">
+
+                                                                <h3><b>plan <%=countsport %>
                                                                 </h3></b></h3>
-                                                                <p class="title"> <label for=""> <b>Title:</b> </label>
+                                                                <p class="title"> <label for=""> <b>Title:</b>
+                                                                    </label>
                                                                     <%= todo[i].title %>
                                                                 </p>
-                                                                <p class="description"><label for=""><b>Description:</b>
+                                                                <p class="description"><label
+                                                                        for=""><b>Description:</b>
                                                                     </label>
                                                                     <%= todo[i].description %>
                                                                 </p>
@@ -220,6 +266,23 @@
                                                                     <%= todo[i].due_date %>
                                                                 </p>
                                                             </div>
+
+                                                        <div class="btn-group statusbutton" role="group"
+                                                            aria-label="Basic mixed styles example">
+                                                           
+                                                            <button value=<%=todo[i]._id%>
+                                                                onclick="deleteItem(event.target.value)"
+                                                                type="button" class="btn
+                                                                btn-danger">Delete</button>
+                                                                &nbsp;
+                                                     
+                                                            <a href="/edittask/<%=todo[i]._id%>"><button
+                                                                    type="button"
+                                                                    class="btn btn-warning">Edit</button></a>
+                                                            <a href=""><button type="button"
+                                                                    class="btn btn-success">Done</button></a>
+                                                        </div>
+                                                     </div>
                                                             <% }%>
                                                                 <% } %>
                                                                     <% if(todo.length==0||counttravel==0){ %>
