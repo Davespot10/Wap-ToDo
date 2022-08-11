@@ -14,8 +14,8 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap');
 
-      
-            body {
+
+        body {
             background-color: black;
 
             opacity: 100%;
@@ -92,14 +92,14 @@
 
 
 
-        
+
 
         #middlebody {
             height: 80%;
             border-radius: 2rem;
             width: 120%;
             text-align: center;
-            
+
             opacity: 50%;
 
 
@@ -132,7 +132,7 @@
         #sportstudy,
         #shoopingtravel {
             width: 50%;
-            
+
 
         }
 
@@ -155,16 +155,19 @@
         }
 
         #logout {
-            height: 4.5rem;
-            margin-right: 3rem;
-            margin-top: 1.5rem;
-            border-radius: 1.5rem;
+            border: none;
+            background: white;
+            color: black;
+            padding: 10px 12px;
+            margin: 13px 18px;
+            border-radius: 5px;
 
         }
 
         #logout:hover {
-            background-color: blue;
+            background-color: rgba(20, 20, 20, 0.996);
             color: white;
+            transform: scale(1.01);
         }
 
         #username {
@@ -259,7 +262,7 @@
         #complated:hover,
         #pending:hover {
             font-size: 1.1em;
-            background-color:black;
+            background-color: black;
 
         }
 
@@ -323,9 +326,10 @@
 
 
         }
-        #formnames{
-            color:rgba(255, 255, 255, 0.534);
-            
+
+        #formnames {
+            color: rgba(255, 255, 255, 0.534);
+
         }
 
 
@@ -335,10 +339,12 @@
 
 
         #logout {
-            height: 4.5rem;
-            margin-right: 3rem;
-            margin-top: 1.5rem;
-            border-radius: 1.5rem;
+            border: none;
+            background: white;
+            color: black;
+            padding: 10px 12px;
+            margin: 13px 18px;
+            border-radius: 5px;
 
         }
 
@@ -356,7 +362,6 @@
             color: white;
             opacity: 50%;
         }
-        
     </style>
 </head>
 <!-- <form class="example" >
@@ -370,9 +375,10 @@
     <div id="outer" class="aa">
 
 
-        <div  id="leftbar">
-            <a  href="homepage">
-                <img style="margin-left: 5rem; margin-top:1rem;padding-bottom: 0.5rem;"  id=""task src="../images/favicon.ico" alt="ssss">
+        <div id="leftbar">
+            <a href="homepage">
+                <img style="margin-left: 5rem; margin-top:1rem;padding-bottom: 0.5rem;" id="" task
+                    src="../images/favicon.ico" alt="ssss">
             </a>
 
             <a style="color: white" href="addtask">
@@ -420,8 +426,10 @@
 
                         <div class="search">
                             <i class="fa fa-search"></i>
-                            <input style="border:rgba(128, 128, 128, 0.572) 1px solid;"type="text" class="form-control" placeholder="Search Your Task Here">
-                            <button style="background-color: rgba(255, 255, 255, 0.629); color: black;" class="btn btn-primary">Search</button>
+                            <input style="border:rgba(128, 128, 128, 0.572) 1px solid;" type="text" class="form-control"
+                                placeholder="Search Your Task Here">
+                            <button style="background-color: rgba(255, 255, 255, 0.629); color: black;"
+                                class="btn btn-primary">Search</button>
                         </div>
 
                     </div>
@@ -433,38 +441,44 @@
             <br>
             <h2 style="padding-left: 50rem; color: rgba(255, 255, 255, 0.534);"> <i><b>Welcome to TODO APP</b></i> </h2>
 
-            <h2 style="padding-left: 45rem;color:rgba(255, 255, 255, 0.534);"> <i><b>Planning means looking ahead!!!</b></i> </h2>
-        
+            <h2 style="padding-left: 45rem;color:rgba(255, 255, 255, 0.534);"> <i><b>Planning means looking
+                        ahead!!!</b></i> </h2>
+
             <form action="/todo" method="POST" id="middlebody">
 
-            <div class="row">
-                <div class="col">
-                    <h2 id="formnames" > Title</h2>
-                  <input type="text" id="addform" name="title" class="form-control" placeholder="Insert your title here" aria-label="First name">
+                <div class="row">
+                    <div class="col">
+                        <h2 id="formnames"> Title</h2>
+                        <input type="text" id="addform" name="title" class="form-control"
+                            placeholder="Insert your title here" aria-label="First name">
+                    </div>
+                    <br>
+                    <div class="col">
+                        <h2 id="formnames">category</h2>
+                    </div>
                 </div>
-                <br>
-                <div class="col">
-                    <h2 id="formnames">category</h2>
-                </div>
-              </div>
-              <select style="margin-left: auto;"  id="addform" name="category"  class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                   <option value="sport">sport</option>
+                <select style="margin-left: auto;" id="addform" name="category" class="form-select form-select-lg mb-3"
+                    aria-label=".form-select-lg example">
+                    <option value="sport">sport</option>
                     <option value="study">study</option>
                     <option value="shopping">shopping</option>
                     <option value="travel">travel</option>
-              </select>
-              <h2 id="formnames">Due Date</h2>
-              <input name="due_date" id="addform" type="date" class="form-control" placeholder="Tiitle" aria-label="First name">
-              <br>
-              <h2 id="formnames">Discription</h2>
+                </select>
+                <h2 id="formnames">Due Date</h2>
+                <input name="due_date" id="addform" type="date" class="form-control" placeholder="Tiitle"
+                    aria-label="First name">
+                <br>
+                <h2 id="formnames">Discription</h2>
 
-              <div class="form-floating">
-                <textarea   name="description" class="form-control" placeholder="Insert Your Task Discreption here(500 max length )" id="floatingTextarea2" style="height: 10rem;width: 70rem; margin-left: 37.5rem;border-radius: 3rem;background-color: rgba(77, 71, 71, 0.935);
+                <div class="form-floating">
+                    <textarea name="description" class="form-control"
+                        placeholder="Insert Your Task Discreption here(500 max length )" id="floatingTextarea2" style="height: 10rem;width: 70rem; margin-left: 37.5rem;border-radius: 3rem;background-color: rgba(77, 71, 71, 0.935);
                 color: white;"></textarea>
-              </div>
-              <button style="width: 8rem;height: 4rem;" id="submitbutton" class="btn btn-primary" type="submit">Submit</button>
+                </div>
+                <button style="width: 8rem;height: 4rem;" id="submitbutton" class="btn btn-primary"
+                    type="submit">Submit</button>
 
-              </form>
+            </form>
 
 
 
