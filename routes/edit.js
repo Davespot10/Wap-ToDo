@@ -13,10 +13,10 @@ router.get('/edittask', function(req, res, next) {
   router.get('/edittask/:id',(req,res)=>{
    
     const id=req.params.id;
-    console.log("set id",id);
+    console.log("set id DONE",id);
     Todo.findById(id)
     .then(result=>{
-      res.render("edit.ejs",{todo:result})
+      res.render("edit.ejs",{todo:result, category: ['sport', 'study', 'shopping', 'travel']})
     })
     .catch(err=>{
       console.log(err);
