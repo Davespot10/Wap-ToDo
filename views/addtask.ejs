@@ -14,13 +14,16 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap');
 
-        body {
-            background-image: url(../images/b5.jpeg);
+      
+            body {
+            background-color: black;
+
+            opacity: 100%;
         }
 
 
         #outer {
-            background-image: url(../images/b10.jpeg);
+            background-color: rgb(135, 135, 124);
             border-radius: 4rem;
 
             margin: 3rem;
@@ -28,6 +31,10 @@
             justify-content: space-evenly;
             background-color: #d6d4d4;
             height: 1800%;
+        }
+
+        .title {
+            margin-left: 25rem;
         }
 
 
@@ -54,8 +61,7 @@
             top: 5px;
             right: 5px;
             height: 50px;
-            width: 110px;
-            background: rgb(0, 174, 255);
+            width: 10%;
             border-radius: 2rem;
 
         }
@@ -94,12 +100,24 @@
             background-color: rgb(211, 228, 215);
 
         }
+        
 
         #middlebody {
             height: 80%;
-            border: 1px solid;
+            border-radius: 2rem;
             width: 120%;
             text-align: center;
+            
+            opacity: 50%;
+
+
+        }
+
+        #addtask1 {
+
+            margin-left: 5rem;
+            font-size: large;
+            margin-top: 10reem;
 
 
         }
@@ -122,12 +140,15 @@
         #sportstudy,
         #shoopingtravel {
             width: 50%;
+            
 
         }
 
         #addform {
             width: 25%;
-            height: 4%;
+            height: 4rem;
+            margin-left: 37.5%;
+           
             border-radius: 3rem;
         }
 
@@ -160,6 +181,189 @@
             font-size: small;
 
         }
+
+        body {
+            background-color: rgb(0, 0, 0);
+
+        }
+
+
+        #outer {
+            /* background-image: url(../images/b10.jpeg); */
+            background-color: rgba(74, 78, 81, 0.284);
+            border-radius: 4rem;
+            margin: 3rem;
+            display: flex;
+            position: absolute;
+
+        }
+
+        .search {
+            position: relative;
+            box-shadow: 0 0 40px rgba(117, 34, 34, 0.1);
+            width: 92%;
+
+        }
+
+        .search input {
+            border-radius: 2rem;
+            height: 5rem;
+            text-indent: 25px;
+            background-color: black;
+
+        }
+
+        .search button {
+            border-radius: 2rem;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            height: 4rem;
+            width: 10rem;
+            background: rgb(0, 174, 255);
+            border-radius: 2rem;
+
+        }
+
+
+
+
+        #task {
+            padding-left: 4rem;
+
+        }
+
+        #todolist,
+        #complated,
+        #pending,
+        #deleted {
+            padding: 2.5rem;
+            text-align: center;
+
+        }
+
+        /* .title{
+
+    margin-top: 10%;
+    margin-left: -14%;
+    color: green;
+    
+
+}
+.description{
+    margin-top: 10%;
+    margin-left: -14%;
+    color: green;
+
+} */
+
+
+
+
+
+        #deleted:hover,
+        #todolist:hover,
+        #complated:hover,
+        #pending:hover {
+            font-size: 1.1em;
+            background-color: rgb(211, 228, 215);
+
+        }
+
+
+
+        #accountphoto {
+            color: white;
+            position: relative;
+            margin-right: 2rem;
+
+
+
+
+        }
+
+        #username {
+            margin-right: 50px;
+
+        }
+
+
+        .category {
+            overflow-y: scroll;
+            height: 80vh;
+            margin-top: 3em;
+
+        }
+
+
+
+
+
+
+
+        #sportstudy,
+        #shoopingtravel {
+            width: 49%;
+
+        }
+
+
+
+        #tasks {
+            /* position: relative; */
+            /* margin-top: 2.0em; */
+            padding: 1rem;
+
+            font-family: Helvetica, Calibri, Futura, Garamond, Times New Roman, Arial, Cambria, Verdana;
+            color: lightgrey;
+            /* overflow-y: scroll; */
+        }
+
+        #todo_category {
+            position: relative;
+            height: 7rem;
+            background-color: rgb(56, 50, 50);
+            color: white;
+            border-radius: 3rem;
+            opacity: 50%;
+            width: 100%;
+
+
+        }
+        #formnames{
+            color:rgba(255, 255, 255, 0.534);
+            
+        }
+
+
+
+
+
+
+
+        #logout {
+            height: 4.5rem;
+            margin-right: 3rem;
+            margin-top: 1.5rem;
+            border-radius: 1.5rem;
+
+        }
+
+        #logout:hover {
+            background-color: black;
+            color: white;
+            opacity: 50%;
+        }
+
+        #username {
+            margin-top: 15px;
+            margin-right: 30px;
+            margin-left: -40px;
+            font-size: small;
+            color: white;
+            opacity: 50%;
+        }
+        
     </style>
 </head>
 <!-- <form class="example" >
@@ -234,14 +438,47 @@
             </form>
             <br>
             <br>
-            <h2 style="text-align: center;"> <i><b>Wellcome to TODO APP</b></i> </h2>
+            <h2 style="padding-left: 50rem; color: rgba(255, 255, 255, 0.534);"> <i><b>Welcome to TODO APP</b></i> </h2>
 
-            <h2 style="text-align: center;"> <i><b>Planning means looking ahead!!!</b></i> </h2>
-
+            <h2 style="padding-left: 45rem;color:rgba(255, 255, 255, 0.534);"> <i><b>Planning means looking ahead!!!</b></i> </h2>
+        
             <form action="/todo" method="POST" id="middlebody">
+
+            <div class="row">
+                <div class="col">
+                    <h2 id="formnames" > Title</h2>
+                  <input type="text" id="addform" name="title" class="form-control" placeholder="Insert your title here" aria-label="First name">
+                </div>
+                <br>
+                <div class="col">
+                    <h2 id="formnames">category</h2>
+                </div>
+              </div>
+              <select style="margin-left: auto;"  id="addform" name="category"  class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                   <option value="sport">sport</option>
+                    <option value="study">study</option>
+                    <option value="shopping">shopping</option>
+                    <option value="travel">travel</option>
+              </select>
+              <h2 id="formnames">Due Date</h2>
+              <input name="due_date" id="addform" type="date" class="form-control" placeholder="Tiitle" aria-label="First name">
+              <br>
+              <h2 id="formnames">Discription</h2>
+
+              <div class="form-floating">
+                <textarea   name="description" class="form-control" placeholder="Insert Your Task Discreption here(500 max length )" id="floatingTextarea2" style="height: 10rem;width: 70rem; margin-left: 37.5rem;border-radius: 3rem;"></textarea>
+              </div>
+              <button style="width: 8rem;height: 4rem;" id="submitbutton" class="btn btn-primary" type="submit">Submit</button>
+
+              </form>
+
+
+
+
+
+
+            <!-- <form action="/todo" method="POST" id="middlebody">
                 <h2>Title</h2><input id="addform" type="text" name="title">
-
-
                 <h2>category</h2>
                 <select id="addform" name="category" id="">
                     <option value="sport">sport</option>
@@ -249,18 +486,21 @@
                     <option value="shopping">shopping</option>
                     <option value="travel">travel</option>
                 </select>
-                <h2>Due Date</h2> <input name="due_date" id="addform" type="due_date">
+                <h2>Due Date</h2> <input name="due_date" id="addform" type="date">
                 <br>
                 <h2>Discription</h2>
                 <textarea placeholder="Insert Your Task Discreption here" name="description" id="" cols="60"
                     rows="10"></textarea>
                 <br>
                 <button id="submitbutton">Submit</button>
-            </form>
+            </form> -->
+
+
+
 
         </div>
         <div id="username">
-            <h4>WellCome User</h4>
+            <h4>Welcome User</h4>
         </div>
         <form action="/postLogout" method="POST">
             <button id="logout">Logout</button>

@@ -14,13 +14,16 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap');
 
+
         body {
-            background-image: url(../images/b5.jpeg);
+            background-color: black;
+
+            opacity: 100%;
         }
 
 
         #outer {
-            background-image: url(../images/b10.jpeg);
+            background-color: rgb(135, 135, 124);
             border-radius: 4rem;
 
             margin: 3rem;
@@ -28,6 +31,10 @@
             justify-content: space-evenly;
             background-color: #d6d4d4;
             height: 1800%;
+        }
+
+        .title {
+            margin-left: 25rem;
         }
 
 
@@ -54,8 +61,7 @@
             top: 5px;
             right: 5px;
             height: 50px;
-            width: 110px;
-            background: rgb(0, 174, 255);
+            width: 10%;
             border-radius: 2rem;
 
         }
@@ -94,6 +100,7 @@
             background-color: rgb(211, 228, 215);
 
         }
+        
 
         #middlebody {
             height: 80%;
@@ -101,6 +108,16 @@
             width: 120%;
             text-align: center;
             background-image: url(../images/addtask\ b.webp);
+            opacity: 50%;
+
+
+        }
+
+        #addtask1 {
+
+            margin-left: 5rem;
+            font-size: large;
+            margin-top: 10reem;
 
 
         }
@@ -160,6 +177,184 @@
             margin-left: -40px;
             font-size: small;
 
+        }
+
+        body {
+            background-color: rgb(0, 0, 0);
+
+        }
+
+
+        #outer {
+            /* background-image: url(../images/b10.jpeg); */
+            background-color: rgba(74, 78, 81, 0.284);
+            border-radius: 4rem;
+            margin: 3rem;
+            display: flex;
+            position: absolute;
+
+        }
+
+        .search {
+            position: relative;
+            box-shadow: 0 0 40px rgba(117, 34, 34, 0.1);
+            width: 92%;
+
+        }
+
+        .search input {
+            border-radius: 2rem;
+            height: 5rem;
+            text-indent: 25px;
+            background-color: black;
+
+        }
+
+        .search button {
+            border-radius: 2rem;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            height: 4rem;
+            width: 10rem;
+            background: rgb(0, 174, 255);
+            border-radius: 2rem;
+
+        }
+
+
+
+
+        #task {
+            padding-left: 4rem;
+
+        }
+
+        #todolist,
+        #complated,
+        #pending,
+        #deleted {
+            padding: 2.5rem;
+            text-align: center;
+
+        }
+
+        /* .title{
+
+    margin-top: 10%;
+    margin-left: -14%;
+    color: green;
+    
+
+}
+.description{
+    margin-top: 10%;
+    margin-left: -14%;
+    color: green;
+
+} */
+
+
+
+
+
+        #deleted:hover,
+        #todolist:hover,
+        #complated:hover,
+        #pending:hover {
+            font-size: 1.1em;
+            background-color: rgb(211, 228, 215);
+
+        }
+
+
+
+        #accountphoto {
+            color: white;
+            position: relative;
+            margin-right: 2rem;
+
+
+
+
+        }
+
+        #username {
+            margin-right: 50px;
+
+        }
+
+
+        .category {
+            overflow-y: scroll;
+            height: 80vh;
+            margin-top: 3em;
+
+        }
+
+
+
+
+
+
+
+        #sportstudy,
+        #shoopingtravel {
+            width: 49%;
+
+        }
+
+
+
+        #tasks {
+            /* position: relative; */
+            /* margin-top: 2.0em; */
+            padding: 1rem;
+
+            font-family: Helvetica, Calibri, Futura, Garamond, Times New Roman, Arial, Cambria, Verdana;
+            color: lightgrey;
+            /* overflow-y: scroll; */
+        }
+
+        #todo_category {
+            position: relative;
+            height: 7rem;
+            background-color: rgb(56, 50, 50);
+            color: white;
+            border-radius: 3rem;
+            opacity: 50%;
+            width: 100%;
+
+
+        }
+
+
+
+
+
+
+
+        #logout {
+            height: 4.5rem;
+            margin-right: 3rem;
+            margin-top: 1.5rem;
+            border-radius: 1.5rem;
+
+        }
+
+        #logout:hover {
+            background-color: black;
+            color: white;
+            opacity: 50%;
+        }
+
+        #username {
+            margin-top: 15px;
+            margin-right: 30px;
+            margin-left: -40px;
+            font-size: small;
+            color: white;
+            opacity: 50%;
         }
     </style>
 </head>
@@ -224,7 +419,7 @@
 
                         <div class="search">
                             <i class="fa fa-search"></i>
-                            <input type="text" class="form-control" placeholder="Search Your Task Here">
+                            <input style="border:rgba(128, 128, 128, 0.572) 1px solid;" type="text" class="form-control" placeholder="Search Your Task Here">
                             <button class="btn btn-primary">Search</button>
                         </div>
 
@@ -238,11 +433,11 @@
 
 
             <div id="middlebody">
-
-                <h2 style="text-align: center;padding: 40px;"> <i><b>Wellcome to TODO APP</b></i> </h2>
-                <div id="addtask">
-                    <a href="addtask"><i style="font-size: 200px;text-align: center;"
-                            class="bi bi-plus-circle-fill"></i></a>
+                <br>
+                <br>
+                <h2 style="margin-top:4rem ;">Welcome to ToDo App</h2>
+                <div id="addtask1" class="addtask2">
+                    <a href="addtask"><i style="font-size: 100px;" class="bi bi-plus-circle-fill"></i></a>
                     <br>
                     <label for="">Click Here </label><i class="bi bi-arrow-up"></i><label for="">to add Your
                         Task</label>
@@ -256,7 +451,7 @@
 
         </div>
         <div id="username">
-            <h4>WellCome User</h4>
+            <h4>Welcome User</h4>
         </div>
         <form action="/postLogout" method="POST">
             <button id="logout">Logout</button>

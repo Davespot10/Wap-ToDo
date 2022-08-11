@@ -14,37 +14,32 @@
         @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap');
 
         body {
-            background-image: url(../images/b5.jpeg);
+            background-color: rgb(0, 0, 0);
+
         }
 
 
         #outer {
             /* background-image: url(../images/b10.jpeg); */
-            background-color: aliceblue;
+            background-color: rgba(74, 78, 81, 0.284);
             border-radius: 4rem;
-
             margin: 3rem;
             display: flex;
-            justify-content: space-evenly;
-            background-color: #d6d4d4;
-            height: 1800%;
+            position:absolute;
+           
         }
-
-
-
         .search {
             position: relative;
-            box-shadow: 0 0 40px rgba(229, 20, 20, 0.1);
+            box-shadow: 0 0 40px rgba(117, 34, 34, 0.1);
             width: 92%;
 
         }
 
         .search input {
             border-radius: 2rem;
-            height: 60px;
-
+            height: 5rem;
             text-indent: 25px;
-            border: 2px solid #d6d4d4;
+            background-color: black;
 
         }
 
@@ -53,8 +48,8 @@
             position: absolute;
             top: 5px;
             right: 5px;
-            height: 50px;
-            width: 110px;
+            height: 4rem;
+            width: 10rem;
             background: rgb(0, 174, 255);
             border-radius: 2rem;
 
@@ -71,15 +66,10 @@
         #todolist,
         #complated,
         #pending,
-        #deleted,
-        #space {
+        #deleted {
             padding: 2.5rem;
             text-align: center;
 
-        }
-
-        #space {
-            margin-top: 60rem;
         }
 
         /* .title{
@@ -111,16 +101,20 @@
         }
 
         #middlebody {
-            height: 70%;
-            width: 120%;
+            height: 60%;
+            width: 100%;
             display: flex;
             justify-content: space-between;
 
         }
 
         #accountphoto {
+            color: white;
+            position: relative;
+            margin-right: 2rem;
+            
 
-            padding: -200px;
+            
 
         }
 
@@ -130,12 +124,14 @@
         }
 
         #middlebody1 {
-            height: 45%;
-            border: 1px solid;
+            height: 30%;
+            border-radius: 3rem;
+            
             width: 100%;
             display: flex;
             flex-direction: column;
-            background-color: rgb(150, 139, 126);
+            background-color:black;
+            opacity: 60%;
 
         }
 
@@ -157,30 +153,38 @@
             width: 49%;
 
         }
+        .form-control{
+            border: rgba(128, 128, 128, 0.572) 1px solid;
+        }
 
 
 
         #tasks {
             /* position: relative; */
             /* margin-top: 2.0em; */
-            padding: 10px;
+            padding: 1rem;
+            
             font-family: Helvetica, Calibri, Futura, Garamond, Times New Roman, Arial, Cambria, Verdana;
+            color:lightgrey;
             /* overflow-y: scroll; */
         }
 
         #todo_category {
-            position: absolute;
-            background-color: rgb(181, 197, 197);
-            width: 40.8%;
+            position: relative;
+            height: 7rem;
+            background-color:rgb(56, 50, 50);
+            color: white;
+            border-radius: 3rem;
+            opacity: 50%;
+            width: 100%;
 
 
         }
 
-        .notodo {
-            text-align: center;
-            padding-top: 20rem;
-            color: rgb(89, 16, 16);
-        }
+        
+           
+         
+        
 
         #logout {
             height: 4.5rem;
@@ -191,8 +195,9 @@
         }
 
         #logout:hover {
-            background-color: blue;
+            background-color: black;
             color: white;
+            opacity: 50%;
         }
 
         #username {
@@ -200,7 +205,8 @@
             margin-right: 30px;
             margin-left: -40px;
             font-size: small;
-
+            color: white;
+            opacity: 50%;
         }
     </style>
 </head>
