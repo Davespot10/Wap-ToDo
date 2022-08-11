@@ -81,8 +81,8 @@
                                                                     <a href="/edittask/<%=todo[i]._id%>"><button
                                                                             type="button"
                                                                             class="btn btn-warning">Edit</button></a>
-                                                                    <a href=""><button type="button"
-                                                                            class="btn btn-success">Done</button></a>
+                                                                   <button type="button" onclick="markDone(event.target.value)"
+                                                                            class="btn btn-success">Done</button>
                                                                 </div>
                                                              </div>
 
@@ -150,8 +150,8 @@
                                                             <a href="/edittask/<%=todo[i]._id%>"><button
                                                                     type="button"
                                                                     class="btn btn-warning">Edit</button></a>
-                                                            <a href=""><button type="button"
-                                                                    class="btn btn-success">Done</button></a>
+                                                             <button type="button" onclick="markDone(event.target.value)"
+                                                                    class="btn btn-success">Done</button>
                                                         </div>
                                                      </div>
                                                             <% }%>
@@ -217,8 +217,8 @@
                                                             <a href="/edittask/<%=todo[i]._id%>"><button
                                                                     type="button"
                                                                     class="btn btn-warning">Edit</button></a>
-                                                            <a href=""><button type="button"
-                                                                    class="btn btn-success">Done</button></a>
+                                                            <button type="button" onclick="markDone(event.target.value)"
+                                                                    class="btn btn-success">Done</button>
                                                         </div>
                                                      </div>
                                                             <% }%>
@@ -279,8 +279,8 @@
                                                             <a href="/edittask/<%=todo[i]._id%>"><button
                                                                     type="button"
                                                                     class="btn btn-warning">Edit</button></a>
-                                                            <a href=""><button type="button"
-                                                                    class="btn btn-success">Done</button></a>
+                                                            <button type="button" onclick="markDone(event.target.value)"
+                                                                    class="btn btn-success">Done</button>
                                                         </div>
                                                      </div>
                                                             <% }%>
@@ -322,6 +322,22 @@
 
         <script>
             function deleteItem(target) {
+                console.log(target);
+                $.ajax({
+                    url: "http://localhost:3000/todo",
+                    type: 'delete',
+                    data: {
+                        id: target
+                    },
+                    success: function (result) {
+                        location.reload(true);
+                        console.log(result);
+                    }, error: (xhr, status, err) => {
+                        console.log('err', err);
+                    }
+                });
+            }
+            function markDone(target) {
                 console.log(target);
                 $.ajax({
                     url: "http://localhost:3000/todo",

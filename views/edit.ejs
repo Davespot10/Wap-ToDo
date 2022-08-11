@@ -506,6 +506,7 @@
             // $("#description").val()
             // let category = $("input[name='category']:selected").val()
             let category = $(".category option:selected").val()
+            console.log('category', category);
             let due_date = $("input[name='due_date']").val()
             let id = $(location).attr('pathname').split('/')[2]
             console.log("All Val......", title, description, category, due_date, id);
