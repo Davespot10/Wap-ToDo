@@ -106,8 +106,9 @@
                                                         <% if(todo[i].category=="study" &&todo[i].status=="deleted" ){%>
                                                             <% countstudy=countstudy+1 %>
 
+                                                            <div class="card card-1">
                                                                 <div style="font-size:large;" id="tasks">
-                                                                    <h3><b>plan <%=countstudy %>
+                                                                    <h3><b>plan <%=countsport %>
                                                                     </h3></b></h3>
                                                                     <p class="title"> <label for=""> <b>Title:</b>
                                                                         </label>
@@ -123,6 +124,7 @@
                                                                         <%= todo[i].due_date %>
                                                                     </p>
                                                                 </div>
+                                                            </div>
                                                                 <% }%>
                                                                     <% } %>
                                                                         <% if(todo.length==0||countstudy==0){ %>
@@ -155,8 +157,9 @@
                                                             ){ %>
                                                             <% countshopping=countshopping+1 %>
 
+                                                            <div class="card card-1">
                                                                 <div style="font-size:large;" id="tasks">
-                                                                    <h3><b>plan <%=countshopping %>
+                                                                    <h3><b>plan <%=countsport %>
                                                                     </h3></b></h3>
                                                                     <p class="title"> <label for=""> <b>Title:</b>
                                                                         </label>
@@ -172,6 +175,7 @@
                                                                         <%= todo[i].due_date %>
                                                                     </p>
                                                                 </div>
+                                                            </div>
                                                                 <% }%>
                                                                     <% } %>
                                                                         <% if(todo.length==0||countshopping==0){ %>
@@ -199,8 +203,9 @@
                                                             ){%>
                                                             <% counttravel=counttravel+1 %>
 
+                                                            <div class="card card-1">
                                                                 <div style="font-size:large;" id="tasks">
-                                                                    <h3><b>plan <%=counttravel %>
+                                                                    <h3><b>plan <%=countsport %>
                                                                     </h3></b></h3>
                                                                     <p class="title"> <label for=""> <b>Title:</b>
                                                                         </label>
@@ -216,6 +221,7 @@
                                                                         <%= todo[i].due_date %>
                                                                     </p>
                                                                 </div>
+                                                            </div>
                                                                 <% }%>
                                                                     <% } %>
                                                                         <% if(todo.length==0||counttravel==0){ %>

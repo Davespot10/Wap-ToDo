@@ -48,7 +48,7 @@
     </select>
     <h2>Due Date</h2> <input name="due_date" id="due_date" type="due_date" value="<%= todo.due_date %>">
     <br>
-    <h2>Discription</h2>
+    <h2>Description</h2>
     <textarea placeholder="Insert Your Task Discreption here" name="description" id="description" cols="60"
         rows="10"><%= todo.description %></textarea>
     <br>

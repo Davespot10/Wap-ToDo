@@ -18,7 +18,7 @@
 
         body {
             background-color: black;
-
+            color: white;
             opacity: 100%;
         }
 
@@ -144,14 +144,11 @@
             margin-left: 37.5%;
             background-color: rgba(77, 71, 71, 0.935);
             color: white;
-
-            border-radius: 3rem;
         }
 
         #submitbutton {
             width: 25%;
             height: 4%;
-            border-radius: 3rem;
             margin-top: 2rem;
 
 
@@ -183,7 +180,7 @@
 
         body {
             background-color: rgb(0, 0, 0);
-
+            color: white;
         }
 
 
@@ -317,7 +314,7 @@
             height: 7rem;
             background-color: rgb(56, 50, 50);
             color: white;
-            border-radius: 3rem;
+            border-radius: 10px 10px 0px 0px;
             opacity: 50%;
             width: 100%;
 
@@ -399,7 +396,7 @@
             <a style="color: white" href="../complatedtask">
                 <div id="complated">
                     <i style="font-size: 50px;" class="bi bi-check2-circle"></i>
-                    <p>Task Complated</p>
+                    <p>Task Completed</p>
                 </div>
             </a>
             <a style="color: white" href="../deletedtask">
@@ -468,11 +465,11 @@
                 <input value="<%= todo.due_date %>" name="due_date" id="addform" type="date" class="form-control"
                     placeholder="Tiitle" aria-label="First name">
                 <br>
-                <h2 id="formnames">Discription</h2>
+                <h2 id="formnames">Description</h2>
 
                 <div class="form-floating">
                     <textarea name="description" class="form-control"
-                        placeholder="Insert Your Task Discreption here(500 max length )" id="floatingTextarea2" style="height: 10rem;width: 70rem; margin-left: 37.5rem;border-radius: 3rem;background-color: rgba(77, 71, 71, 0.935);
+                        placeholder="Insert Your Task Discreption here(500 max length )" id="floatingTextarea2" style="height: 10rem;width: 70rem; margin-left: 37.5rem;background-color: rgba(77, 71, 71, 0.935);
                         color: white;"><%= todo.description %></textarea>
                 </div>
                 <button onclick="update()" id="submitbutton" style="width: 8rem;height: 4rem;" class="btn btn-primary"
@@ -527,7 +524,7 @@
                     category = category
                     due_date = due_date
                     id = id;
-
+                    window.history.back();
                 }, error: (xhr, status, err) => {
                     console.log('err', err);
                 }
