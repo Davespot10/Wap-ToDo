@@ -113,6 +113,27 @@ router.delete("/", (req, res) => {
     });
 });
 
+router.delete("/done", (req, res) => {
+  const delId = req.body.id;
+  Todo.updateOne({ _id: delId }, { status: "done" })
+    .then((todo) => {
+      res.send(todo);
+    })
+    .catch((err) => {
+      res.send(err);
+    });
+});
+
+router.delete('/remove',(req,res)=>{
+    const delId = req.body.id;
+    Todo.remove({ _id: delId }).then((todo)=>{
+      res.send(todo);
+    })
+    .catch((err)=>{
+      res.send(err);
+    })
+})
+
 
 
 module.exports = router;
