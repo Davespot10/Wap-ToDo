@@ -12,7 +12,7 @@
       <change beforePath="$PROJECT_DIR$/routes/addtask.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/addtask.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/alltask.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/alltask.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/complatedtask.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/completedtask.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/delatedtask.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/deletedtask.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/deletedtask.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/deletedtask.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/homepage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/todo.js" afterDir="false" />
@@ -21,7 +21,7 @@
       <change beforePath="$PROJECT_DIR$/views/addtask.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/addtask.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/alltask.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/alltask.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/complatedtask.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/completedtask.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/delatedtask.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/deletedtask.ejs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/partials/div.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/div.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/partials/head.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/head.ejs" afterDir="false" />
