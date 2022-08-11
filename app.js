@@ -59,7 +59,8 @@ app.use("/todo", todoRouter);
 app.use("/users", usersRouter);
 app.use("/item", itemRouter);
 app.use(loginRoute);
-// app.use('/*',authRoute)
+// app.use('/*',authRoute);
+
 app.use(hompageRoute);
 app.use(alltaskRoute);
 app.use(complatedtaskRoute);
@@ -67,6 +68,7 @@ app.use(pendingtaskRoute);
 app.use(deletedtaskRoute);
 app.use(addTaskRoute);
 app.use(editRoute);
+
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
