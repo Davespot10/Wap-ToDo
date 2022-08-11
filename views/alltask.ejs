@@ -52,44 +52,44 @@
                                                             <% countsport=countsport+1 %>
 
 
-                                                                <div class="card card-1"
+                                                                
+                                                            <div class="card card-1"
                                                                     href="/edittask/<%=todo[i]._id%>">
-                                                                        <div style="font-size:large;" id="tasks">
+                                                                    <div style="font-size:large;" id="tasks">
 
-                                                                            <h3><b>plan <%=countsport %>
-                                                                            </h3></b></h3>
-                                                                            <p class="title"> <label for="">
-                                                                                    <b>Title:</b>
-                                                                                </label>
-                                                                                <%= todo[i].title %>
-                                                                            </p>
-                                                                            <p class="description"><label
-                                                                                    for=""><b>Description:</b>
-                                                                                </label>
-                                                                                <%= todo[i].description %>
-                                                                            </p>
-                                                                            <p class="due_date"><label for=""><b>
-                                                                                        due_date:</b></label>
-                                                                                <%= todo[i].due_date %>
-                                                                            </p>
-                                                                        </div>
+                                                                        <h3><b>plan <%=countsport %>
+                                                                        </h3></b></h3>
+                                                                        <p class="title"> <label for=""> <b>Title:</b>
+                                                                            </label>
+                                                                            <%= todo[i].title %>
+                                                                        </p>
+                                                                        <p class="description"><label
+                                                                                for=""><b>Description:</b>
+                                                                            </label>
+                                                                            <%= todo[i].description %>
+                                                                        </p>
+                                                                        <p class="due_date"><label for=""><b>
+                                                                                    due_date:</b></label>
+                                                                            <%= todo[i].due_date %>
+                                                                        </p>
+                                                                    </div>
 
-                                                                        <div class=" statusbutton" role="group"
-                                                                            aria-label="Basic mixed styles example">
+                                                                    <div class=" statusbutton" role="group"
+                                                                        aria-label="Basic mixed styles example">
 
-                                                                            <button value=<%=todo[i]._id %>
-                                                                                onclick="deleteItem(event.target.value)"
-                                                                                type="button" class="btn
-                                                                                btn-danger">Delete</button>
-                                                                            &nbsp;
+                                                                        <button value=<%=todo[i]._id%>
+                                                                            onclick="deleteItem(event.target.value)"
+                                                                            type="button" class="btn
+                                                                            btn-danger">Delete</button>
+                                                                        &nbsp;
 
-                                                                            <a href="/edittask/<%=todo[i]._id%>">
-                                                                                <button type="button"
-                                                                                    class="btn btn-warning">Edit</button></a>
-                                                                            <button type="button" value=<%=todo[i]._id %>
-                                                                                onclick="markDone(event.target.value)"
-                                                                                class="btn btn-success">Done</button>
-                                                                        </div>
+                                                                        <a href="/edittask/<%=todo[i]._id%>"><button
+                                                                                type="button"
+                                                                                class="btn btn-warning">Edit</button></a>
+                                                                        <button type="button" value=<%=todo[i]._id%>
+                                                                            onclick="markDone(event.target.value)"
+                                                                            class="btn btn-success">Done</button>
+                                                                    </div>
                                                                 </div>
 
 
