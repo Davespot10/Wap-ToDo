@@ -45,7 +45,7 @@
                                                 </div>
                                                 <div class="category">
                                                     <% for(let i=0;i<todo.length;i++){ %>
-                                                        <% if(todo[i].category=="sport" ){ %>
+                                                        <% if(todo[i].category=="sport"&& todo[i].status!="delete"  ){ %>
                                                             <% countsport=countsport+1 %>
                                                             
 
@@ -115,13 +115,13 @@
                                             </div>
                                             <div class="category">
                                                 <% for(let i=0;i<todo.length;i++){ %>
-                                                    <% if(todo[i].category=="study" ){ %>
+                                                    <% if(todo[i].category=="study"&&todo[i].status!="delete"  ){ %>
                                                         <% countstudy=countstudy+1 %>
 
                                                         <div id="editedContainer" href="/edittask/<%=todo[i]._id%>">
                                                             <div  style="font-size:large;" id="tasks">
 
-                                                                <h3><b>plan <%=countsport %>
+                                                                <h3><b>plan <%=countstudy %>
                                                                 </h3></b></h3>
                                                                 <p class="title"> <label for=""> <b>Title:</b>
                                                                     </label>
@@ -140,13 +140,13 @@
 
                                                         <div class="btn-group statusbutton" role="group"
                                                             aria-label="Basic mixed styles example">
-                                                            <!-- <a  href=""> -->
+                                                           
                                                             <button value=<%=todo[i]._id%>
                                                                 onclick="deleteItem(event.target.value)"
                                                                 type="button" class="btn
                                                                 btn-danger">Delete</button>
                                                                 &nbsp;
-                                                            <!-- </a>  -->
+                                                           
                                                             <a href="/edittask/<%=todo[i]._id%>"><button
                                                                     type="button"
                                                                     class="btn btn-warning">Edit</button></a>
@@ -182,13 +182,13 @@
                                             </div>
                                             <div class="category">
                                                 <% for(let i=0;i<todo.length;i++){ %>
-                                                    <% if(todo[i].category=="shopping" ){ %>
+                                                    <% if(todo[i].category=="shopping"&&todo[i].status!="delete"  ){ %>
                                                         <% countshopping=countshopping+1 %>
 
                                                         <div id="editedContainer" href="/edittask/<%=todo[i]._id%>">
                                                             <div  style="font-size:large;" id="tasks">
 
-                                                                <h3><b>plan <%=countsport %>
+                                                                <h3><b>plan <%=countshopping %>
                                                                 </h3></b></h3>
                                                                 <p class="title"> <label for=""> <b>Title:</b>
                                                                     </label>
@@ -244,13 +244,13 @@
                                             </div>
                                             <div class="category">
                                                 <% for(let i=0;i<todo.length;i++){ %>
-                                                    <% if(todo[i].category=="travel" ){ %>
+                                                    <% if(todo[i].category=="travel"&&todo[i].status!="delete" ){ %>
                                                         <% counttravel=counttravel+1 %>
 
                                                         <div id="editedContainer" href="/edittask/<%=todo[i]._id%>">
                                                             <div  style="font-size:large;" id="tasks">
 
-                                                                <h3><b>plan <%=countsport %>
+                                                                <h3><b>plan <%=counttravel %>
                                                                 </h3></b></h3>
                                                                 <p class="title"> <label for=""> <b>Title:</b>
                                                                     </label>
