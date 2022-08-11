@@ -78,21 +78,23 @@
                                                                     </p>
                                                                 </div>
     
-                                                            <div class="btn-group statusbutton" role="group"
-                                                                aria-label="Basic mixed styles example">
-                                                               
-                                                                <button value=<%=todo[i]._id%>
-                                                                    onclick="deleteItem(event.target.value)"
-                                                                    type="button" class="btn
-                                                                    btn-danger">Delete</button>
-                                                                    &nbsp;
-                                                         
-                                                                <a href="/edittask/<%=todo[i]._id%>"><button
-                                                                        type="button"
-                                                                        class="btn btn-warning">Edit</button></a>
-                                                                <a href=""><button type="button"
-                                                                        class="btn btn-success">Done</button></a>
-                                                            </div>
+                                                            
+                                                                <div class=" statusbutton" role="group"
+                                                                    aria-label="Basic mixed styles example">
+                                                                    <!-- <a  href=""> -->
+                                                                    <button value=<%=todo[i]._id%>
+                                                                        onclick="deleteItem(event.target.value)"
+                                                                        type="button" class="btn
+                                                                        btn-danger">Delete</button>
+                                                                        &nbsp;
+                                                                    <!-- </a>  -->
+                                                                    <a href="/edittask/<%=todo[i]._id%>">
+                                                                        <button
+                                                                            type="button"
+                                                                            class="btn btn-warning">Edit</button></a>
+                                                                   <button type="button" value=<%=todo[i]._id%> onclick="markDone(event.target.value)"
+                                                                            class="btn btn-success">Done</button>
+                                                                </div>
                                                          </div>
                                                                 <% }%>
                                                                     <% } %>
@@ -147,21 +149,23 @@
                                                                     </p>
                                                                 </div>
     
-                                                            <div class="btn-group statusbutton" role="group"
-                                                                aria-label="Basic mixed styles example">
-                                                               
-                                                                <button value=<%=todo[i]._id%>
-                                                                    onclick="deleteItem(event.target.value)"
-                                                                    type="button" class="btn
-                                                                    btn-danger">Delete</button>
-                                                                    &nbsp;
-                                                         
-                                                                <a href="/edittask/<%=todo[i]._id%>"><button
-                                                                        type="button"
-                                                                        class="btn btn-warning">Edit</button></a>
-                                                                <a href=""><button type="button"
-                                                                        class="btn btn-success">Done</button></a>
-                                                            </div>
+                                                            
+                                                                <div class=" statusbutton" role="group"
+                                                                    aria-label="Basic mixed styles example">
+                                                                    <!-- <a  href=""> -->
+                                                                    <button value=<%=todo[i]._id%>
+                                                                        onclick="deleteItem(event.target.value)"
+                                                                        type="button" class="btn
+                                                                        btn-danger">Delete</button>
+                                                                        &nbsp;
+                                                                    <!-- </a>  -->
+                                                                    <a href="/edittask/<%=todo[i]._id%>">
+                                                                        <button
+                                                                            type="button"
+                                                                            class="btn btn-warning">Edit</button></a>
+                                                                   <button type="button" value=<%=todo[i]._id%> onclick="markDone(event.target.value)"
+                                                                            class="btn btn-success">Done</button>
+                                                                </div>
                                                          </div>
                                                                 <% }%>
                                                                     <% } %>
@@ -215,21 +219,23 @@
                                                                     </p>
                                                                 </div>
     
-                                                            <div class="btn-group statusbutton" role="group"
-                                                                aria-label="Basic mixed styles example">
-                                                               
-                                                                <button value=<%=todo[i]._id%>
-                                                                    onclick="deleteItem(event.target.value)"
-                                                                    type="button" class="btn
-                                                                    btn-danger">Delete</button>
-                                                                    &nbsp;
-                                                         
-                                                                <a href="/edittask/<%=todo[i]._id%>"><button
-                                                                        type="button"
-                                                                        class="btn btn-warning">Edit</button></a>
-                                                                <a href=""><button type="button"
-                                                                        class="btn btn-success">Done</button></a>
-                                                            </div>
+                                                            
+                                                                <div class=" statusbutton" role="group"
+                                                                    aria-label="Basic mixed styles example">
+                                                                    <!-- <a  href=""> -->
+                                                                    <button value=<%=todo[i]._id%>
+                                                                        onclick="deleteItem(event.target.value)"
+                                                                        type="button" class="btn
+                                                                        btn-danger">Delete</button>
+                                                                        &nbsp;
+                                                                    <!-- </a>  -->
+                                                                    <a href="/edittask/<%=todo[i]._id%>">
+                                                                        <button
+                                                                            type="button"
+                                                                            class="btn btn-warning">Edit</button></a>
+                                                                   <button type="button" value=<%=todo[i]._id%> onclick="markDone(event.target.value)"
+                                                                            class="btn btn-success">Done</button>
+                                                                </div>
                                                          </div>
                                                             
 
@@ -333,6 +339,40 @@
 
         </div>
 
+        <script>
+            function deleteItem(target) {
+                console.log(target);
+                $.ajax({
+                    url: "http://localhost:3000/todo",
+                    type: 'delete',
+                    data: {
+                        id: target
+                    },
+                    success: function (result) {
+                        location.reload(true);
+                        console.log(result);
+                    }, error: (xhr, status, err) => {
+                        console.log('err', err);
+                    }
+                });
+            }
+            function markDone(target) {
+                console.log(target);
+                $.ajax({
+                    url: "http://localhost:3000/todo/done",
+                    type: 'delete',
+                    data: {
+                        id: target
+                    },
+                    success: function (result) {
+                        // location.reload(true);
+                        console.log(result);
+                    }, error: (xhr, status, err) => {
+                        console.log('err', err);
+                    }
+                });
+            }
+        </script>
     </body>
 
 </html>

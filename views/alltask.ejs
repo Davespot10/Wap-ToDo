@@ -69,7 +69,7 @@
                                                                         </p>
                                                                     </div>
 
-                                                                <div class="btn-group statusbutton" role="group"
+                                                                <div class=" statusbutton" role="group"
                                                                     aria-label="Basic mixed styles example">
                                                                     <!-- <a  href=""> -->
                                                                     <button value=<%=todo[i]._id%>
@@ -78,10 +78,11 @@
                                                                         btn-danger">Delete</button>
                                                                         &nbsp;
                                                                     <!-- </a>  -->
-                                                                    <a href="/edittask/<%=todo[i]._id%>"><button
+                                                                    <a href="/edittask/<%=todo[i]._id%>">
+                                                                        <button
                                                                             type="button"
                                                                             class="btn btn-warning">Edit</button></a>
-                                                                   <button type="button" onclick="markDone(event.target.value)"
+                                                                   <button type="button" value=<%=todo[i]._id%> onclick="markDone(event.target.value)"
                                                                             class="btn btn-success">Done</button>
                                                                 </div>
                                                              </div>
@@ -138,7 +139,7 @@
                                                                 </p>
                                                             </div>
 
-                                                        <div class="btn-group statusbutton" role="group"
+                                                        <div class=" statusbutton" role="group"
                                                             aria-label="Basic mixed styles example">
                                                            
                                                             <button value=<%=todo[i]._id%>
@@ -150,7 +151,7 @@
                                                             <a href="/edittask/<%=todo[i]._id%>"><button
                                                                     type="button"
                                                                     class="btn btn-warning">Edit</button></a>
-                                                             <button type="button" onclick="markDone(event.target.value)"
+                                                             <button type="button" value=<%=todo[i]._id%> onclick="markDone(event.target.value)"
                                                                     class="btn btn-success">Done</button>
                                                         </div>
                                                      </div>
@@ -205,7 +206,7 @@
                                                                 </p>
                                                             </div>
 
-                                                        <div class="btn-group statusbutton" role="group"
+                                                        <div class=" statusbutton" role="group"
                                                             aria-label="Basic mixed styles example">
                                                             <!-- <a  href=""> -->
                                                             <button value=<%=todo[i]._id%>
@@ -217,7 +218,7 @@
                                                             <a href="/edittask/<%=todo[i]._id%>"><button
                                                                     type="button"
                                                                     class="btn btn-warning">Edit</button></a>
-                                                            <button type="button" onclick="markDone(event.target.value)"
+                                                            <button type="button" value=<%=todo[i]._id%> onclick="markDone(event.target.value)"
                                                                     class="btn btn-success">Done</button>
                                                         </div>
                                                      </div>
@@ -267,7 +268,7 @@
                                                                 </p>
                                                             </div>
 
-                                                        <div class="btn-group statusbutton" role="group"
+                                                        <div class=" statusbutton" role="group"
                                                             aria-label="Basic mixed styles example">
                                                            
                                                             <button value=<%=todo[i]._id%>
@@ -279,7 +280,7 @@
                                                             <a href="/edittask/<%=todo[i]._id%>"><button
                                                                     type="button"
                                                                     class="btn btn-warning">Edit</button></a>
-                                                            <button type="button" onclick="markDone(event.target.value)"
+                                                            <button type="button" value=<%=todo[i]._id%> onclick="markDone(event.target.value)"
                                                                     class="btn btn-success">Done</button>
                                                         </div>
                                                      </div>
@@ -340,13 +341,13 @@
             function markDone(target) {
                 console.log(target);
                 $.ajax({
-                    url: "http://localhost:3000/todo",
+                    url: "http://localhost:3000/todo/done",
                     type: 'delete',
                     data: {
                         id: target
                     },
                     success: function (result) {
-                        location.reload(true);
+                        // location.reload(true);
                         console.log(result);
                     }, error: (xhr, status, err) => {
                         console.log('err', err);
