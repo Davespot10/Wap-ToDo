@@ -25,7 +25,8 @@
                                 <div class="search">
                                     <i class="fa fa-search"></i>
                                     <input type="text" class="form-control" placeholder="Search Your Task Here">
-                                    <button style="background-color: rgba(255, 255, 255, 0.629); color: black;" class="btn btn-primary">Search</button>
+                                    <button style="background-color: rgba(255, 255, 255, 0.629); color: black;"
+                                        class="btn btn-primary">Search</button>
                                 </div>
 
                             </div>
@@ -36,15 +37,7 @@
                     <br>
                     <br>
                     <h2 style="text-align: center;"> <i><b>deleted Tasks!!!</b></i> </h2>
-                    <!-- // title:"Study Wap",
-                    //description:"Plan to study Jquery and Dom Manipulation",
-                    //plannedDate:"09-08-2022",
-                    //category:"travel,sport,study,shopping"
-                    //status:"pending,done,deleted" -->
-                    <!-- for( let i=0;i<todo.length;i++){
-                if(todo[i].status==)
-            }      
-         -->
+
                     <% let countstudy=0; %>
                         <% let countshopping=0; %>
                             <% let counttravel=0; %>
@@ -62,6 +55,7 @@
                                                         <% if(todo[i].category=="sport" &&todo[i].status=="deleted" ){%>
                                                             <% countsport=countsport+1 %>
 
+                                                            <div class="card card-1">
                                                                 <div style="font-size:large;" id="tasks">
                                                                     <h3><b>plan <%=countsport %>
                                                                     </h3></b></h3>
@@ -79,6 +73,7 @@
                                                                         <%= todo[i].due_date %>
                                                                     </p>
                                                                 </div>
+                                                            </div>
                                                                 <% }%>
                                                                     <% } %>
                                                                         <% if(todo.length==0||countsport==0){ %>
@@ -156,7 +151,8 @@
                                                 </div>
                                                 <div class="category">
                                                     <% for(let i=0;i<todo.length;i++){ %>
-                                                        <% if(todo[i].category=="shopping" &&todo[i].status=="deleted"){ %>
+                                                        <% if(todo[i].category=="shopping" &&todo[i].status=="deleted"
+                                                            ){ %>
                                                             <% countshopping=countshopping+1 %>
 
                                                                 <div style="font-size:large;" id="tasks">
@@ -199,7 +195,8 @@
                                                 </div>
                                                 <div class="category">
                                                     <% for(let i=0;i<todo.length;i++){ %>
-                                                        <% if(todo[i].category=="travel" &&todo[i].status=="deleted" ){%>
+                                                        <% if(todo[i].category=="travel" &&todo[i].status=="deleted"
+                                                            ){%>
                                                             <% counttravel=counttravel+1 %>
 
                                                                 <div style="font-size:large;" id="tasks">

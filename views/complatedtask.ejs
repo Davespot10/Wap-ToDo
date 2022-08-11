@@ -193,7 +193,7 @@
                                                     <% for(let i=0;i<todo.length;i++){ %>
                                                         <% if(todo[i].category=="travel" &&todo[i].status=="done" ){ %>
                                                             <% counttravel=counttravel+1 %>
-
+                                                            <div class="card card-1">
                                                                 <div style="font-size:large;" id="tasks">
                                                                     <h3><b>plan <%=counttravel %>
                                                                     </h3></b></h3>
@@ -210,6 +210,7 @@
                                                                                 due_date:</b></label>
                                                                         <%= todo[i].due_date %>
                                                                     </p>
+                                                                </div>
                                                                 </div>
                                                                 <% }%>
                                                                     <% } %>
