@@ -18,8 +18,8 @@
 
                                 <div class="search">
                                     <i class="fa fa-search"></i>
-                                    <input type="text" class="form-control" placeholder="Search Your Task Here">
-                                    <button class="btn btn-primary">Search</button>
+                                    <input style="border:rgba(128, 128, 128, 0.572) 1px solid;" type="text" class="form-control" placeholder="Search Your Task Here">
+                                    <button style="background-color: rgba(255, 255, 255, 0.629); color: black;" class="btn btn-primary">Search</button>
                                 </div>
 
                             </div>
@@ -45,7 +45,7 @@
                                                 </div>
                                                 <div class="category">
                                                     <% for(let i=0;i<todo.length;i++){ %>
-                                                        <% if(todo[i].category=="sport"&& todo[i].status!="delete"  ){ %>
+                                                        <% if(todo[i].category=="sport"&& todo[i].status!="deleted"  ){ %>
                                                             <% countsport=countsport+1 %>
                                                             
 
@@ -115,9 +115,9 @@
                                             </div>
                                             <div class="category">
                                                 <% for(let i=0;i<todo.length;i++){ %>
-                                                    <% if(todo[i].category=="study"&&todo[i].status!="delete"  ){ %>
+                                                    <% if(todo[i].category=="study"&&todo[i].status!="deleted"  ){ %>
                                                         <% countstudy=countstudy+1 %>
-
+                                                        
                                                         <div id="editedContainer" href="/edittask/<%=todo[i]._id%>">
                                                             <div  style="font-size:large;" id="tasks">
 
@@ -182,7 +182,7 @@
                                             </div>
                                             <div class="category">
                                                 <% for(let i=0;i<todo.length;i++){ %>
-                                                    <% if(todo[i].category=="shopping"&&todo[i].status!="delete"  ){ %>
+                                                    <% if(todo[i].category=="shopping"&&todo[i].status!="deleted"  ){ %>
                                                         <% countshopping=countshopping+1 %>
 
                                                         <div id="editedContainer" href="/edittask/<%=todo[i]._id%>">
@@ -244,7 +244,7 @@
                                             </div>
                                             <div class="category">
                                                 <% for(let i=0;i<todo.length;i++){ %>
-                                                    <% if(todo[i].category=="travel"&&todo[i].status!="delete" ){ %>
+                                                    <% if(todo[i].category=="travel"&&todo[i].status!="deleted" ){ %>
                                                         <% counttravel=counttravel+1 %>
 
                                                         <div id="editedContainer" href="/edittask/<%=todo[i]._id%>">

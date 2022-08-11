@@ -142,6 +142,8 @@
             width: 25%;
             height: 4rem;
             margin-left: 37.5%;
+            background-color: rgba(77, 71, 71, 0.935);
+            color: white;
 
             border-radius: 3rem;
         }
@@ -372,35 +374,35 @@
 
 
         <div id="leftbar">
-            <a href="../homepage">
-                <h3 id="task">TASK</h3>
+            <a  href="../homepage">
+                <img style="margin-left: 5rem; margin-top:1rem;padding-bottom: 0.5rem;"  id=""task src="../images/favicon.ico" alt="ssss">
             </a>
 
-            <a href="../addtask">
+            <a style="color: white" href="../addtask">
                 <div id="todolist">
                     <i class="bi bi-file-earmark-plus-fill" style="font-size: 50px;"></i>
                     <p>Add New Task</p>
                 </div>
             </a>
-            <a href="../alltask">
+            <a style="color: white" href="../alltask">
                 <div id="todolist">
                     <i class="bi bi-list-task" style="font-size: 50px;"></i>
                     <p>All Tasks</p>
                 </div>
             </a>
-            <a href="../pendingtask">
+            <a style="color: white" href="../pendingtask">
                 <div id="pending">
                     <i style="font-size: 50px;" class="bi bi-alarm-fill"></i>
                     <p>Task Pending</p>
                 </div>
             </a>
-            <a href="../complatedtask">
+            <a style="color: white" href="../complatedtask">
                 <div id="complated">
                     <i style="font-size: 50px;" class="bi bi-check2-circle"></i>
                     <p>Task Complated</p>
                 </div>
             </a>
-            <a href="../deletedtask">
+            <a style="color: white" href="../deletedtask">
                 <div id="deleted">
                     <i style="font-size: 50px;" class="bi bi-trash3-fill"></i>
                     <p>Archived</p>
@@ -419,8 +421,8 @@
 
                         <div class="search">
                             <i class="fa fa-search"></i>
-                            <input type="text" class="form-control" placeholder="Search Your Task Here">
-                            <button class="btn btn-primary">Search</button>
+                            <input style="border:1px gray solid;" type="text" class="form-control" placeholder="Search Your Task Here">
+                            <button style="background-color: rgba(255, 255, 255, 0.629); color: black;" class="btn btn-primary">Search</button>
                         </div>
 
                     </div>
@@ -461,7 +463,8 @@
                 <div class="form-floating">
                     <textarea name="description" class="form-control"
                         placeholder="Insert Your Task Discreption here(500 max length )" id="floatingTextarea2"
-                        style="height: 10rem;width: 70rem; margin-left: 37.5rem;border-radius: 3rem;"><%= todo.description %></textarea>
+                        style="height: 10rem;width: 70rem; margin-left: 37.5rem;border-radius: 3rem;background-color: rgba(77, 71, 71, 0.935);
+                        color: white;"><%= todo.description %></textarea>
                 </div>
                 <button onclick="update()" id="submitbutton" style="width: 8rem;height: 4rem;" class="btn btn-primary"
                     type="submit">Submit</button>
